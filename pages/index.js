@@ -65,7 +65,7 @@ export default function Home() {
             <p className="max-w-xl py-5 mx-auto leading-8 text-gray-600 text-extralight md:text-extralight">
               Elevate Your Online Presence with Skilled Freelancer for
               Programming and SEO. Get a complete web solution that combines
-              functionality and search engine optimization. Let's make your
+              functionality and search engine optimization. Let&apos;s make your
               website the best it can be.
             </p>
             <div className="flex justify-center gap-16 pt-10 text-5xl text-gray-400 text-gray-600">
@@ -181,7 +181,7 @@ export default function Home() {
                   <Image src={avatar} layout="fill" objectFit="cover" />
                 </div>
                 <p className="py-2 text-sm text-left text-gray-800 uppercase md:text-lg">
-                  I'm currently looking for new opportunities, my inbox is
+                  I&apos;m currently looking for new opportunities, my inbox is
                   always open.
                 </p>
               </div>

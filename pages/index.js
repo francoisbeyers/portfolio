@@ -59,7 +59,7 @@ export default function Home() {
             <h2 className="py-2 text-6xl font-thin uppercase text-dark-grey font-amiri md:text-9xl">
               Francois Beyers
             </h2>
-            <h3 className="py-4 text-3xl text-dar-grey md:text-5xl font-playfair">
+            <h3 className="py-4 text-3xl text-dar-grey md:text-5xl">
               Developer and SEO ninja.
             </h3>
             <p className="max-w-xl py-5 mx-auto leading-8 text-gray-600 text-extralight md:text-extralight">
@@ -68,7 +68,7 @@ export default function Home() {
               functionality and search engine optimization. Let&apos;s make your
               website the best it can be.
             </p>
-            <div className="flex justify-center gap-16 pt-10 text-5xl text-gray-400 text-gray-600">
+            <div className="flex justify-center gap-16 pt-10 text-5xl text-opacity-25 text-orange">
               <a href="https://www.linkedin.com/in/francois-beyers/">
                 <AiFillLinkedin />
               </a>
@@ -88,14 +88,36 @@ export default function Home() {
                 Services I offer
               </h3>
             </div>
-            <div className="space-y-5 md:flex md:gap-12 md:space-y-0">
-              <h3 className="text-4xl font-thin text-center underline md:text-6xl font-amiri text-dark-grey">
-                Web & Mobile Development
-              </h3>
-              <h3 className="text-4xl font-thin text-center md:text-6xl font-amiri text-dark-grey">
-                SEO &{" "}
-                <span style={{ filter: "blur(2px)" }}>Digital Marketing</span>
-              </h3>
+            <div className="justify-center space-y-5 md:columns-2 md:flex md:gap-12 md:space-y-0">
+              <div className="space-y-8">
+                <h3 className="text-4xl font-thin text-center underline md:text-5xl font-amiri text-dark-grey">
+                  Web & Mobile Development
+                </h3>
+                <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
+                  SEO &{" "}
+                  <span style={{ filter: "blur(2px)" }}>Digital Marketing</span>
+                </h3>
+              </div>
+              <div className="space-y-8">
+                <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
+                  Chrome{" "}
+                  <span style={{ filter: "drop-shadow(8px 8px 5px gray)" }}>
+                    Extensions
+                  </span>
+                </h3>
+                {/* <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
+                  Consulting &{" "}
+                  <span style={{ filter: "blur(2px)" }}>Training</span>
+                </h3> */}
+                <h3
+                  className="text-4xl font-thin text-center uppercase md:text-5xl font-amiri text-dark-grey"
+                  style={{
+                    animation: "glow 2s ease-in-out infinite alternate",
+                  }}
+                >
+                  Consulting & Training
+                </h3>
+              </div>
             </div>
           </div>
         </section>
@@ -178,7 +200,12 @@ export default function Home() {
             <div className="justify-center text-center md:flex md:justify-between ">
               <div className="flex items-center">
                 <div className="relative w-20 h-20 p-10 mr-8 overflow-hidden rounded-full bg-orange md:h-20 md:w-20">
-                  <Image src={avatar} layout="fill" objectFit="cover" />
+                  <Image
+                    src={avatar}
+                    layout="fill"
+                    objectFit="cover"
+                    alt="profile image"
+                  />
                 </div>
                 <p className="py-2 text-sm text-left text-gray-800 uppercase md:text-lg">
                   I&apos;m currently looking for new opportunities, my inbox is

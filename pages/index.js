@@ -6,8 +6,7 @@ import {
   AiFillInstagram,
   AiOutlineRedEnvelope,
 } from "react-icons/ai";
-import { BsFillMoonStarsFill } from "react-icons/bs";
-import francois from "../public/avatar.png";
+
 import avatar from "../public/avatar_profile.png";
 import code from "../public/code.png";
 import design from "../public/design.png";
@@ -84,33 +83,27 @@ export default function Home() {
         <section>
           <div>
             <div className="py-10 text-center">
-              <h3 className="py-1 text-gray-800 uppercase ">
-                Services I offer
-              </h3>
+              <h3 className="py-1 text-gray-800 ">Services I offer</h3>
             </div>
-            <div className="justify-center space-y-5 md:columns-2 md:flex md:gap-12 md:space-y-0">
+            <div className="justify-center mt-8 mb-8 space-y-8 md:columns-2 md:flex md:gap-12 md:space-y-0">
               <div className="space-y-8">
                 <h3 className="text-4xl font-thin text-center underline md:text-5xl font-amiri text-dark-grey">
                   Web & Mobile Development
                 </h3>
-                <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
-                  SEO &{" "}
-                  <span style={{ filter: "blur(2px)" }}>Digital Marketing</span>
-                </h3>
-              </div>
-              <div className="space-y-8">
                 <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
                   Chrome{" "}
                   <span style={{ filter: "drop-shadow(8px 8px 5px gray)" }}>
                     Extensions
                   </span>
                 </h3>
-                {/* <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
-                  Consulting &{" "}
-                  <span style={{ filter: "blur(2px)" }}>Training</span>
-                </h3> */}
+              </div>
+              <div className="space-y-8">
+                <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
+                  SEO &{" "}
+                  <span style={{ filter: "blur(2px)" }}>Digital Marketing</span>
+                </h3>
                 <h3
-                  className="text-4xl font-thin text-center uppercase md:text-5xl font-amiri text-dark-grey"
+                  className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey"
                   style={{
                     animation: "glow 2s ease-in-out infinite alternate",
                   }}
@@ -221,7 +214,7 @@ export default function Home() {
                   className="pl-2"
                   style={{
                     backgroundImage:
-                      "linear-gradient(-100deg, rgba(255, 255, 255, 0), orange 85%, rgba(255, 255, 255, 0))",
+                      "linear-gradient(-100deg, rgba(255, 255, 255, 0), #dc562e 85%, rgba(255, 255, 255, 0))",
                   }}
                 >
                   email

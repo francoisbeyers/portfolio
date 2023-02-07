@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://beyers.tech
+
+# Sitemaps
+Sitemap: https://beyers.tech/sitemap.xml

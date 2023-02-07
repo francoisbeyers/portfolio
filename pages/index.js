@@ -21,6 +21,24 @@ import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 
 export default function Home() {
+  const [time, setTime] = useState(
+    new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(
+        new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      );
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div>
       <Head>
@@ -53,11 +71,7 @@ export default function Home() {
                 <div className="flex items-center">
                   <AiFillClockCircle className="text-2xl" />
                   <p className="px-2 py-2 text-sm font-medium text-dark-grey">
-                    {/* display the current time just the hours and minutes with the colon flashing */}
-                    {new Date().toLocaleTimeString([], {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
+                    {time}
                   </p>
                 </div>
               </li>

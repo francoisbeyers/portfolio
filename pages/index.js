@@ -78,13 +78,22 @@ export default function Home() {
               work together to bring your web vision to life!
             </p>
             <div className="flex justify-center gap-16 pt-10 text-5xl text-opacity-25 text-orange">
-              <a href="https://www.linkedin.com/in/francois-beyers/">
+              <a
+                href="https://www.linkedin.com/in/francois-beyers/"
+                aria-label="Link that will take you LinkedIn profile"
+              >
                 <AiFillLinkedin />
               </a>
-              <a href="https://twitter.com/BeyersFrancois">
+              <a
+                href="https://twitter.com/BeyersFrancois"
+                aria-label="Link that will take you Twitter profile"
+              >
                 <AiFillTwitterCircle />
               </a>
-              <a href="https://www.instagram.com/francoisbeyers/">
+              <a
+                href="https://www.instagram.com/francoisbeyers/"
+                aria-label="Link that will take you Instagram profile"
+              >
                 <AiFillInstagram />
               </a>
             </div>

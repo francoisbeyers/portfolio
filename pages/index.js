@@ -82,7 +82,7 @@ export default function Home() {
           <div className="flex flex-col p-10 py-10 text-center md:flex-row">
             <div className="md:text-left md:w-1/2 md:mx-auto">
               <h1 className="py-2 text-sm md:text-lg text-dark-grey font-amiri">
-                hello, I'm{" "}
+                hello, I&apos;m{" "}
               </h1>
               <h2 className="py-2 text-5xl font-thin uppercase text-dark-grey font-amiri md:text-9xl">
                 Francois Beyers

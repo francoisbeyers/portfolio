@@ -112,6 +112,16 @@ export default function Home() {
               </a>
             </div>
           </div>
+          {/* button cta "lets work together with a mailto" */}
+          <a
+            href="mailto:francois@beyers.tech?subject=Hi Francois, I'd like to work with you"
+            className="flex justify-center my-10"
+            aria-label="Link that will take you to contact page"
+          >
+            <button className="px-10 py-4 text-xl font-medium text-white rounded-full shadow-lg bg-orange">
+              Let&apos;s work together
+            </button>
+          </a>
         </section>
         <section>
           <div>

@@ -19,6 +19,7 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import Link from "next/link";
 
 export default function Home() {
   const [time, setTime] = useState(
@@ -62,7 +63,7 @@ export default function Home() {
                 <a
                   href="/public/Resume-François-Beyers.pdf"
                   download={"Resume-François-Beyers.pdf"}
-                  className="px-4 py-2 text-sm font-medium border-2 rounded-full shadow-lg border-dark-grey text-dark-grey"
+                  className="px-4 py-2 text-sm font-medium border-2 rounded-full shadow-lg border-dark-grey text-dark-grey hover:bg-dark-grey hover:text-white hover:duration-500"
                 >
                   Resume
                 </a>
@@ -91,37 +92,44 @@ export default function Home() {
               look great, but also perform well in search engines. Let&apos;s
               work together to bring your web vision to life!
             </p>
-            <div className="flex justify-center gap-16 pt-10 text-5xl text-opacity-25 text-orange">
-              <a
-                href="https://www.linkedin.com/in/francois-beyers/"
-                aria-label="Link that will take you LinkedIn profile"
-              >
-                <AiFillLinkedin />
-              </a>
-              <a
-                href="https://twitter.com/BeyersFrancois"
-                aria-label="Link that will take you Twitter profile"
-              >
-                <AiFillTwitterCircle />
-              </a>
-              <a
-                href="https://www.instagram.com/francoisbeyers/"
-                aria-label="Link that will take you Instagram profile"
-              >
-                <AiFillInstagram />
-              </a>
+            <div className="flex justify-center gap-16 pt-10 text-5xl">
+              <Link href="https://www.linkedin.com/in/francois-beyers/">
+                <a
+                  className="text-opacity-25 hover:text-opacity-100 text-orange hover:duration-500"
+                  aria-label="Link that will take you LinkedIn profile"
+                >
+                  <AiFillLinkedin />
+                </a>
+              </Link>
+              <Link href="https://twitter.com/BeyersFrancois">
+                <a
+                  className="text-opacity-25 hover:text-opacity-100 text-orange hover:duration-500"
+                  aria-label="Link that will take you Twitter profile"
+                >
+                  <AiFillTwitterCircle />
+                </a>
+              </Link>
+              <Link href="https://www.instagram.com/francoisbeyers/">
+                <a
+                  className="text-opacity-25 hover:text-opacity-100 text-orange hover:duration-500"
+                  aria-label="Link that will take you Instagram profile"
+                >
+                  <AiFillInstagram />
+                </a>
+              </Link>
             </div>
           </div>
-          {/* button cta "lets work together with a mailto" */}
-          <a
+
+          <Link
             href="mailto:francois@beyers.tech?subject=Hi Francois, I'd like to work with you"
-            className="flex justify-center my-10"
             aria-label="Link that will take you to contact page"
           >
-            <button className="px-10 py-4 text-xl font-medium text-white rounded-full shadow-lg bg-orange">
-              Let&apos;s work together
-            </button>
-          </a>
+            <a className="flex justify-center my-10">
+              <button className="px-10 py-4 text-xl font-medium border-2 rounded-full shadow-lg text-orange border-orange hover:bg-orange hover:duration-300 hover:text-dark-grey ">
+                Let&apos;s work together
+              </button>
+            </a>
+          </Link>
         </section>
         <section>
           <div>
@@ -243,13 +251,13 @@ export default function Home() {
                     alt="profile image"
                   />
                 </div>
-                <p className="py-2 text-sm text-left text-gray-800 uppercase md:text-lg">
+                <p className="py-2 text-sm text-left text-gray-800 md:text-lg">
                   I&apos;m currently looking for new opportunities, my inbox is
                   always open.
                 </p>
               </div>
               <a
-                className="flex items-center justify-center px-4 py-2 text-4xl text-gray-800 uppercase font-amiri"
+                className="flex items-center justify-center px-4 py-2 text-4xl uppercase text-gray-800/50 hover:text-gray-800 font-amiri"
                 href="mailto:francois@beyers.tech"
               >
                 Send an

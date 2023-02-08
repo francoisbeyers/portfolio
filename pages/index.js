@@ -52,12 +52,10 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col justify-between min-h-screen px-10 md:px-20 lg:px-40 bg-stone-300">
+      <main className="flex flex-col justify-between min-h-screen px-10 md:px-20 lg:px-40 bg-stone-300 scroll-smooth">
         <section className="">
           <nav className="flex flex-wrap items-center justify-between py-10 mb-12 text-dark-grey">
-            <h1 className="text-xl uppercase font-extralight">
-              francoisbeyers
-            </h1>
+            <h1 className="text-xl font-extralight">francois.beyers</h1>
             <ul className="flex items-center gap-4">
               <li>
                 <a
@@ -268,7 +266,7 @@ export default function Home() {
                 </p>
               </div>
               <a
-                className="flex items-center justify-center px-4 py-2 text-4xl text-gray-800 uppercase hover:text-black hover:duration-500 font-amiri"
+                className="flex items-center justify-center px-4 py-2 text-4xl text-gray-800 uppercase hover:duration-500 font-amiri"
                 href="mailto:francois@beyers.tech"
               >
                 Send an

@@ -166,7 +166,7 @@ export default function Home() {
               <li className="flex gap-4">
                 <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 overflow-hidden rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 ">
                   <Image
-                    alt=""
+                    alt="carymor logo"
                     src={resumeCYM}
                     layout="fill"
                     objectFit="cover"
@@ -198,7 +198,7 @@ export default function Home() {
               <li className="flex gap-4">
                 <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 overflow-hidden rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 ">
                   <Image
-                    alt=""
+                    alt="catchafire logo"
                     src={resumeCF}
                     layout="fill"
                     objectFit="cover"
@@ -232,7 +232,7 @@ export default function Home() {
               <li className="flex gap-4">
                 <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 overflow-hidden rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <Image
-                    alt=""
+                    alt="big lemon logo"
                     src={resumeBL}
                     layout="fill"
                     objectFit="cover"
@@ -266,7 +266,7 @@ export default function Home() {
               <li className="flex gap-4">
                 <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 overflow-hidden rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <Image
-                    alt=""
+                    alt="yellow sub logo"
                     src={resumeYS}
                     layout="fill"
                     objectFit="cover"

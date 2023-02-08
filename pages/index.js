@@ -59,8 +59,11 @@ export default function Home() {
             <ul className="flex items-center gap-4">
               <li>
                 <a
-                  href="/public/Resume-François-Beyers.pdf"
+                  href="/Resume-François-Beyers.pdf"
                   download={"Resume-François-Beyers.pdf"}
+                  alt="pdf resume"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hidden px-4 py-2 text-sm font-medium border-2 rounded-full shadow-lg md:block border-dark-grey text-dark-grey hover:bg-dark-grey hover:text-white hover:duration-500"
                 >
                   Resume

@@ -11,15 +11,13 @@ export default function Document() {
           src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
         />
 
-        <Script id="ga-script" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GTM_ID}', {
-              page_path: window.location.pathname,
-            });
-        `}
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GTM_ID}');
+          `}
         </Script>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"

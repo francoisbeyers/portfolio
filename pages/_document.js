@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Link from "next/link";
 import Script from "next/script";
 
 export default function Document() {
@@ -19,10 +20,6 @@ export default function Document() {
               gtag('config', '${GTM_ID}');
           `}
         </Script>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
         <meta
           name="google-site-verification"
           content="Nosr2IBs_5qu2iZfClz5YndbSpsbh0waBvBBcC4rrKc"

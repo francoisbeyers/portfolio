@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import {
@@ -15,7 +16,6 @@ import resumeCYM from "../public/Resume-cym.jpg";
 import resumeBL from "../public/Resume-big_lemon.jpg";
 import resumeCF from "../public/Resume-catchf_fire.jpg";
 import resumeYS from "../public/Resume-yellowsub.jpg";
-import resumeAPPL from "../public/Resume-apple.jpg";
 
 export default function Home() {
   const [time, setTime] = useState(
@@ -36,6 +36,7 @@ export default function Home() {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
   return (
     <div>
       <Head>
@@ -79,13 +80,13 @@ export default function Home() {
 
           <div className="flex flex-col p-10 py-10 text-center md:flex-row">
             <div className="md:text-left md:w-1/2 md:mx-auto">
-              <h1 className="py-2 text-sm md:text-lg text-dark-grey font-amiri">
-                hello, I&apos;m{" "}
+              <h1 className="py-2 text-sm md:text-lg text-dark-grey">
+                hi, i&apos;m{" "}
               </h1>
-              <h2 className="py-2 text-5xl font-thin uppercase text-dark-grey font-amiri md:text-9xl">
+              <h2 className="py-2 text-5xl text-dark-grey font-clash md:text-9xl">
                 Francois Beyers
               </h2>
-              <h3 className="py-4 text-3xl text-dar-grey md:text-5xl">
+              <h3 className="py-4 text-3xl text-gray-600 md:text-5xl">
                 Experienced Web Developer and SEO for Hire
               </h3>
               <p className="max-w-xl py-5 leading-8 text-gray-600 text-extralight md:text-extralight">
@@ -98,41 +99,37 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center justify-center gap-16 pt-10 text-5xl md:w-1/2 md:mx-auto">
               <div className="flex gap-8">
-                <Link href="https://www.linkedin.com/in/francois-beyers/">
-                  <a
-                    className="text-opacity-25 hover:text-opacity-100 hover:drop-shadow-lg text-orange hover:duration-500"
-                    aria-label="Link that will take you LinkedIn profile"
-                  >
-                    <AiFillLinkedin />
-                  </a>
+                <Link
+                  href="https://www.linkedin.com/in/francois-beyers/"
+                  className="text-opacity-25 hover:text-opacity-100 hover:drop-shadow-lg text-orange hover:duration-500"
+                  aria-label="Link that will take you LinkedIn profile"
+                >
+                  <AiFillLinkedin />
                 </Link>
-                <Link href="https://twitter.com/BeyersFrancois">
-                  <a
-                    className="text-opacity-25 hover:text-opacity-100 hover:drop-shadow-lg text-orange hover:duration-500"
-                    aria-label="Link that will take you Twitter profile"
-                  >
-                    <AiFillTwitterCircle />
-                  </a>
+                <Link
+                  href="https://twitter.com/BeyersFrancois"
+                  className="text-opacity-25 hover:text-opacity-100 hover:drop-shadow-lg text-orange hover:duration-500"
+                  aria-label="Link that will take you Twitter profile"
+                >
+                  <AiFillTwitterCircle />
                 </Link>
-                <Link href="https://www.instagram.com/francoisbeyers/">
-                  <a
-                    className="text-opacity-25 hover:text-opacity-100 hover:drop-shadow-lg text-orange hover:duration-500"
-                    aria-label="Link that will take you Instagram profile"
-                  >
-                    <AiFillInstagram />
-                  </a>
+                <Link
+                  href="https://www.instagram.com/francoisbeyers/"
+                  className="text-opacity-25 hover:text-opacity-100 hover:drop-shadow-lg text-orange hover:duration-500"
+                  aria-label="Link that will take you Instagram profile"
+                >
+                  <AiFillInstagram />
                 </Link>
               </div>
               <div>
                 <Link
                   href="mailto:francois@beyers.tech?subject=Hi Francois, I'd like to work with you"
                   aria-label="Link that will take you to contact page"
+                  className="flex justify-center my-10"
                 >
-                  <a className="flex justify-center my-10">
-                    <button className="px-6 py-2 text-xl font-medium border-2 rounded-full shadow-lg md:px-10 md:py-4 text-orange border-orange hover:bg-orange hover:duration-500 hover:text-dark-grey ">
-                      Let&apos;s work together
-                    </button>
-                  </a>
+                  <button className="px-6 py-2 text-xl font-medium border-2 rounded-full shadow-lg md:px-10 md:py-4 text-orange border-orange hover:bg-orange hover:duration-500 hover:text-dark-grey ">
+                    Let&apos;s work together
+                  </button>
                 </Link>
               </div>
             </div>
@@ -145,9 +142,9 @@ export default function Home() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 aria-hidden="true"
                 className="flex-none w-6 h-6"
               >
@@ -172,7 +169,7 @@ export default function Home() {
                     objectFit="cover"
                     decoding="async"
                     data-nimg="1"
-                    className="h-7 w-7"
+                    className="h-7 w-7 grayscale hover:filter-none hover-duration-500"
                     loading="lazy"
                     style={{ color: "transparent" }}
                   />
@@ -189,9 +186,9 @@ export default function Home() {
                     className="ml-auto text-xs text-zinc-400"
                     aria-label="2019 until Present"
                   >
-                    <time datetime="2018">2018</time>{" "}
+                    <time dateTime="2018">2018</time>{" "}
                     <span aria-hidden="true">—</span>{" "}
-                    <time datetime="2023">Present</time>
+                    <time dateTime="2023">Present</time>
                   </dd>
                 </dl>
               </li>
@@ -204,7 +201,7 @@ export default function Home() {
                     objectFit="cover"
                     decoding="async"
                     data-nimg="1"
-                    className="h-7 w-7"
+                    className="h-7 w-7 grayscale hover:filter-none hover-duration-500"
                     loading="lazy"
                     style={{ color: "transparent" }}
                   />
@@ -223,9 +220,9 @@ export default function Home() {
                     className="ml-auto text-xs text-zinc-400"
                     aria-label="2014 until 2019"
                   >
-                    <time datetime="2020">2020</time>{" "}
+                    <time dateTime="2020">2020</time>{" "}
                     <span aria-hidden="true">—</span>{" "}
-                    <time datetime="2023">present</time>
+                    <time dateTime="2023">present</time>
                   </dd>
                 </dl>
               </li>
@@ -238,7 +235,7 @@ export default function Home() {
                     objectFit="cover"
                     decoding="async"
                     data-nimg="1"
-                    className="h-7 w-7"
+                    className="h-7 w-7 grayscale hover:filter-none hover-duration-500"
                     loading="lazy"
                     style={{ color: "transparent" }}
                   />
@@ -257,9 +254,9 @@ export default function Home() {
                     className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                     aria-label="2011 until 2014"
                   >
-                    <time datetime="2022">2022</time>{" "}
+                    <time dateTime="2022">2022</time>{" "}
                     <span aria-hidden="true">—</span>{" "}
-                    <time datetime="2023">2023</time>
+                    <time dateTime="2023">2023</time>
                   </dd>
                 </dl>
               </li>
@@ -272,7 +269,7 @@ export default function Home() {
                     objectFit="cover"
                     decoding="async"
                     data-nimg="1"
-                    className="h-7 w-7"
+                    className="h-7 w-7 grayscale hover:filter-none hover-duration-500"
                     loading="lazy"
                     style={{ color: "transparent" }}
                   />
@@ -291,9 +288,9 @@ export default function Home() {
                     className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                     aria-label="2008 until 2011"
                   >
-                    <time datetime="2021">2021</time>{" "}
+                    <time dateTime="2021">2021</time>{" "}
                     <span aria-hidden="true">—</span>{" "}
-                    <time datetime="2022">2022</time>
+                    <time dateTime="2022">2022</time>
                   </dd>
                 </dl>
               </li>
@@ -315,9 +312,9 @@ export default function Home() {
               >
                 <path
                   d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </a>
@@ -327,33 +324,24 @@ export default function Home() {
         <section>
           <div>
             <div className="py-10 text-center">
-              <h3 className="py-1 text-gray-800 font-amiri ">
+              <h3 className="py-1 text-gray-800 font-clash ">
                 Services I offer
               </h3>
             </div>
             <div className="justify-center mt-8 mb-8 space-y-8 md:columns-2 md:flex md:gap-12 md:space-y-0">
               <div className="space-y-8">
-                <h3 className="text-4xl font-thin text-center underline md:text-5xl font-amiri text-dark-grey">
+                <h3 className="text-4xl font-thin text-center text-gray-800 underline md:text-5xl font-clash">
                   Web & Mobile Development
                 </h3>
-                <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
-                  Chrome{" "}
-                  <span style={{ filter: "drop-shadow(8px 8px 5px gray)" }}>
-                    Extensions
-                  </span>
+                <h3 className="text-4xl font-thin text-center text-gray-800 md:text-5xl font-clash">
+                  Chrome Extensions
                 </h3>
               </div>
               <div className="space-y-8">
-                <h3 className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey">
-                  SEO &{" "}
-                  <span style={{ filter: "blur(2px)" }}>Digital Marketing</span>
+                <h3 className="text-4xl font-thin text-center text-gray-800 md:text-5xl font-clash">
+                  SEO & Digital Marketing
                 </h3>
-                <h3
-                  className="text-4xl font-thin text-center md:text-5xl font-amiri text-dark-grey"
-                  style={{
-                    animation: "glow 2s ease-in-out infinite alternate",
-                  }}
-                >
+                <h3 className="text-4xl font-thin text-center text-gray-800 md:text-5xl font-clash">
                   Consulting & Training
                 </h3>
               </div>
@@ -452,7 +440,7 @@ export default function Home() {
                 </p>
               </div>
               <a
-                className="flex items-center justify-center px-4 py-2 text-4xl text-gray-800 uppercase hover:duration-500 font-amiri"
+                className="flex items-center justify-center px-4 py-2 text-4xl text-gray-800 uppercase hover:duration-500 font-clash"
                 href="mailto:francois@beyers.tech"
               >
                 Send an

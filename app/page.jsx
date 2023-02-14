@@ -11,11 +11,15 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+// projects
+import projects from "../projects";
+
 import avatar from "../public/avatar_profile.png";
 import resumeCYM from "../public/Resume-cym.jpg";
 import resumeBL from "../public/Resume-big_lemon.jpg";
 import resumeCF from "../public/Resume-catchf_fire.jpg";
 import resumeYS from "../public/Resume-yellowsub.jpg";
+import ProjectList from "./ProjectList";
 
 export default function Home() {
   const [time, setTime] = useState(
@@ -135,6 +139,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <ProjectList projects={projects} />
         {/* work */}
         <section className="my-10">
           <div className="p-6 mx-auto border md:w-1/2 rounded-2xl border-gray-800/40">
@@ -423,7 +428,7 @@ export default function Home() {
         </section> */}
 
         <footer className="pt-10 ">
-          <div className="py-4 mx-auto border-t-2 border-b-2 border-dark-grey">
+          <div className="py-4 mx-auto border-t border-b border-dark-grey">
             <div className="justify-center text-center md:flex md:justify-between ">
               <div className="flex items-center">
                 <div className="relative w-20 h-20 p-10 mr-8 overflow-hidden rounded-full bg-orange md:h-20 md:w-20">

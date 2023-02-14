@@ -22,6 +22,10 @@ a {
   font-family: "Amiri", serif;
   src: url("../public/Amiri-Bold.ttf");
 }
+@font-face {
+  font-family: "Clash Display", san-serif;
+  src: url("../public/ClashDisplay-Bold.ttf");
+}
 
 @keyframes glow {
   from {

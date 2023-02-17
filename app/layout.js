@@ -43,16 +43,16 @@ export default function RootLayout({ children }) {
                 beyers
               </Link>
             </div>
-            <nav className="ml-auto flex w-[65%] md:w-[55%] lg:w-[40%]">
+            <nav className="ml-auto flex w-[65%] md:w-[55%] lg:w-[40%] items-center">
               <div class="flex space-x-1 lg:space-x-2 w-full md:w-auto justify-end md:justify-start">
                 <Link
-                  class="group relative block overflow-hidden py-2 opacity-[1] transition-opacity duration-300 ease-in-out hover:opacity-[1]"
+                  class="group relative block overflow-hidden opacity-[1] transition-opacity duration-300 ease-in-out hover:opacity-[1]"
                   href="/"
                 >
-                  <span class="block transition-transform duration-[350ms] ease-in-out md:group-hover:translate-y-[-110%]">
+                  <span class="block transition-transform duration-[350ms] ease-in-out md:group-hover:translate-y-[-110%] py-2">
                     Projects
                   </span>
-                  <span class="transition-translate absolute inset-0 block translate-y-full duration-[350ms] ease-in-out md:group-hover:translate-y-0">
+                  <span class="transition-translate absolute inset-0 block translate-y-full duration-[350ms] ease-in-out md:group-hover:translate-y-0 py-2">
                     Projects
                   </span>
                 </Link>

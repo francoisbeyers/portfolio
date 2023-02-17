@@ -1,31 +1,31 @@
 const projects = [
   {
     id: 1,
-    title: "Non Profit Website",
+    title: "Câr Y Môr",
     type: "Front-end",
     year: 2022,
     link: "/projects/car-y-mor",
   },
   {
     id: 2,
-    title: "Financial Recruitment Website",
+    title: "Rasa Festival - non-profit",
     type: "Design",
     year: 2020,
-    link: "/baker-charles",
+    link: "/projects/rasa-festival",
   },
   {
     id: 3,
-    title: "Portfolio Site",
+    title: "Baker Charles",
     type: "Design, Development, SEO",
     year: 2020,
-    link: "https://example.com",
+    link: "/projects/baker-charles",
   },
   {
     id: 4,
-    title: "Mobile App",
+    title: "BMT connect",
     type: "Full-stack",
     year: 2019,
-    link: "https://example.com",
+    link: "/projects/bmt-connect",
   },
 ];
 

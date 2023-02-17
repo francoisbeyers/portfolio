@@ -1,7 +1,12 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
-import cym from "../../../public/Resume-cym.jpg";
+import cymMain from "../../../public/cym_homepage_mockup.jpg";
+import cymIphone1 from "../../../public/cym_iphone_mockup.png";
+import cymIphone2 from "../../../public/cym_iphone_mockup2.png";
+import cymMac from "../../../public/cym_mac_mockup.png";
+
 export default function Page(params) {
   const titleAnim = {
     hidden: { opacity: 0 },
@@ -19,7 +24,7 @@ export default function Page(params) {
     },
   };
   return (
-    <main className="flex flex-col p-10 py-10 text-left">
+    <main className="flex flex-col py-10 text-left">
       <motion.div
         variants={container}
         initial="hidden"
@@ -43,8 +48,82 @@ export default function Page(params) {
           <span>SEO</span>
         </motion.div>
       </motion.div>
-      <div className="w-full mt-10">
-        <Image src={cym} alt="Câr Y Môr" width={500} height={500} />
+      <div className="w-full mt-10 mb-3">
+        <Image src={cymMain} alt="Câr Y Môr" width={"100vw"} height={"100%"} />
+      </div>
+      <div className="flex flex-wrap mb-3 border-t border-b border-dark-grey py-7">
+        <h2 className="text-3xl font-bold text-dark-grey md:flex-1">
+          Challenge
+        </h2>
+        <p className="text-lg text-left text-gray-600 md:flex-1">
+          The main challenge in designing, building, and adding SEO to the
+          Community Benefit Society&apos;s website was to effectively
+          communicate their unique mission of establishing Wales&apos; first
+          Seaweed and Shellfish farm. The website needed to reflect their
+          commitment to improving the coastal environment while creating
+          year-round full-time jobs in the community. Careful consideration was
+          given to the website&apos;s design to ensure that it aligned with the
+          organisation&apos;s values and effectively conveyed their message.
+          Additionally, the website&apos;s SEO strategy was targeted towards
+          promoting the organisation&apos;s unique features and benefits, such
+          as their focus on environmental conservation and job creation. The
+          goal was to generate high levels of organic traffic to the website and
+          encourage community involvement and support for the
+          organisation&apos;s mission. Through the website, the organisation was
+          able to successfully convey their message and generate support for
+          their efforts in improving the coastal environment and creating
+          year-round full-time jobs.
+        </p>
+      </div>
+      <div className="flex flex-wrap mb-3 border-b border-dark-grey py-7">
+        <h2 className="text-3xl font-bold text-dark-grey md:flex-1">
+          Solution
+        </h2>
+        <p className="text-lg text-left text-gray-600 md:flex-1">
+          To effectively design, build, and add SEO to the Community Benefit
+          Society&apos;s website, a thorough analysis of their mission, values,
+          and goals was conducted. This analysis guided the development of a
+          website that accurately and compellingly reflected their unique
+          message and value proposition. The website&apos;s design was carefully
+          crafted to align with the organisation&apos;s values, using visuals
+          and messaging that highlighted their commitment to environmental
+          conservation and job creation. In terms of SEO strategy, a thorough
+          keyword research was conducted to identify the most relevant and
+          high-traffic keywords related to the organisation&apos;s mission.
+          These keywords were then incorporated into the website&apos;s content,
+          titles, and meta descriptions to boost search engine visibility and
+          drive traffic to the site. To encourage community involvement and
+          support, the website included interactive elements such as a blog,
+          social media links, and an events calendar. These features allowed the
+          organisation to keep the community informed about their progress and
+          engage with them in ongoing conversations. The result was a website
+          that effectively communicated the organisation&apos;s unique mission
+          and generated support for their efforts to improve the coastal
+          environment and create year-round full-time jobs.
+        </p>
+      </div>
+      <div className="mb-3">
+        <div className="grid grid-cols-10 gap-3">
+          <div className="col-span-12 lg:col-span-5">
+            <Image
+              src={cymIphone1}
+              alt="Câr Y Môr"
+              width={"100vw"}
+              height={"100%"}
+            />
+          </div>
+          <div className="col-span-12 lg:col-span-5">
+            <Image
+              src={cymIphone2}
+              alt="Câr Y Môr"
+              width={"100vw"}
+              height={"100%"}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="w-full mb-3">
+        <Image src={cymMac} alt="Câr Y Môr" width={"100vw"} height={"100%"} />
       </div>
     </main>
   );

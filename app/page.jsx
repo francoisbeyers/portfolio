@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <>
       {/* hero */}
-      <main className="flex flex-col p-10 py-10 text-center md:flex-row">
+      <main className="flex flex-col py-10 text-center md:flex-row">
         <motion.div
           variants={container}
           initial="hidden"
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="pt-10 ">
+      {/* <footer className="pt-10 ">
         <div className="py-4 mx-auto border-t border-b border-dark-grey">
           <div className="justify-center text-center md:flex md:justify-between ">
             <div className="flex items-center">
@@ -144,7 +144,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        {/* ul with 3 li and a tags */}
+        
         <div className="flex items-center justify-between text-center md:flex-row">
           <ul className="flex py-2 text-sm md:flex-row">
             <li className="px-2 text-gray-800 uppercase">
@@ -163,7 +163,7 @@ export default function Home() {
             © {new Date().getFullYear()}
           </p>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 }

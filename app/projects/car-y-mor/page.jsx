@@ -49,7 +49,12 @@ export default function Page(params) {
         </motion.div>
       </motion.div>
       <div className="w-full mt-10 mb-3">
-        <Image src={cymMain} alt="Câr Y Môr" width={"100vw"} height={"100%"} />
+        <Image
+          src={cymMain}
+          alt="Câr Y Môr"
+          sizes="(min-width: 768px) 90vw, 90vw"
+          className="object-cover w-full"
+        />
       </div>
       <div className="flex flex-wrap mb-3 border-t border-b border-dark-grey py-7">
         <h2 className="text-3xl font-bold text-dark-grey md:flex-1">
@@ -104,26 +109,31 @@ export default function Page(params) {
       </div>
       <div className="mb-3">
         <div className="grid grid-cols-10 gap-3">
-          <div className="col-span-12 lg:col-span-5">
+          <div className="col-span-12 md:col-span-5">
             <Image
               src={cymIphone1}
               alt="Câr Y Môr"
-              width={"100vw"}
-              height={"100%"}
+              sizes="(min-width: 768px) 90vw, 90vw"
+              className="object-cover w-full"
             />
           </div>
-          <div className="col-span-12 lg:col-span-5">
+          <div className="object-contain col-span-12 md:col-span-5">
             <Image
               src={cymIphone2}
               alt="Câr Y Môr"
-              width={"100vw"}
-              height={"100%"}
+              sizes="(min-width: 768px) 90vw, 90vw"
+              className="object-cover w-full"
             />
           </div>
         </div>
       </div>
       <div className="w-full mb-3">
-        <Image src={cymMac} alt="Câr Y Môr" width={"100vw"} height={"100%"} />
+        <Image
+          src={cymMac}
+          alt="Câr Y Môr"
+          sizes="(min-width: 768px) 90vw, 90vw"
+          className="object-cover w-full"
+        />
       </div>
     </main>
   );

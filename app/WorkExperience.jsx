@@ -35,10 +35,10 @@ export default function WorkExperience() {
               <Image
                 alt="carymor logo"
                 src={resumeCYM}
-                layout="fill"
-                objectFit="cover"
                 decoding="async"
                 data-nimg="1"
+                fill
+                sizes="(max-width: 640px) 100vw, 640px"
                 className="h-7 w-7 grayscale hover:filter-none hover-duration-500"
                 loading="lazy"
                 style={{ color: "transparent" }}
@@ -67,8 +67,8 @@ export default function WorkExperience() {
               <Image
                 alt="catchafire logo"
                 src={resumeCF}
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 640px) 100vw, 640px"
                 decoding="async"
                 data-nimg="1"
                 className="h-7 w-7 grayscale hover:filter-none hover-duration-500"
@@ -101,8 +101,8 @@ export default function WorkExperience() {
               <Image
                 alt="big lemon logo"
                 src={resumeBL}
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 640px) 100vw, 640px"
                 decoding="async"
                 data-nimg="1"
                 className="h-7 w-7 grayscale hover:filter-none hover-duration-500"
@@ -135,8 +135,8 @@ export default function WorkExperience() {
               <Image
                 alt="yellow sub logo"
                 src={resumeYS}
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 640px) 100vw, 640px"
                 decoding="async"
                 data-nimg="1"
                 className="h-7 w-7 grayscale hover:filter-none hover-duration-500"

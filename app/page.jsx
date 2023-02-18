@@ -19,7 +19,7 @@ import resumeCF from "../public/Resume-catchf_fire.jpg";
 import resumeYS from "../public/Resume-yellowsub.jpg";
 import ProjectList from "./ProjectList";
 import SocialMediaLinks from "./SocialMediaLinks";
-import WorkExperience from "./WorkExperince";
+import WorkExperience from "./WorkExperience";
 
 export default function Home() {
   const titleAnim = {

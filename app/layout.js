@@ -14,24 +14,24 @@ const clash = localFont({
 });
 
 export default function RootLayout({ children }) {
-  const [time, setTime] = useState(
-    new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })
-  );
+  // const [time, setTime] = useState(
+  //   new Date().toLocaleTimeString([], {
+  //     hour: "2-digit",
+  //     minute: "2-digit",
+  //   })
+  // );
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(
-        new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })
-      );
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setTime(
+  //       new Date().toLocaleTimeString([], {
+  //         hour: "2-digit",
+  //         minute: "2-digit",
+  //       })
+  //     );
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
     <html lang="en" className={`${clash.variable}`}>
       <head />
@@ -80,10 +80,10 @@ export default function RootLayout({ children }) {
                 </Link> */}
               </div>
               <span
-                suppressHydrationWarning={true}
+                // suppressHydrationWarning={true}
                 className="hidden ml-auto font-normal md:block"
               >
-                {time}
+                {/* {time} */}
               </span>
             </nav>
           </div>
@@ -94,12 +94,7 @@ export default function RootLayout({ children }) {
             <div className="justify-center text-center md:flex md:justify-between ">
               <div className="flex items-center">
                 <div className="relative w-20 h-20 p-10 mr-8 overflow-hidden rounded-full bg-orange md:h-20 md:w-20">
-                  <Image
-                    src={avatar}
-                    layout="fill"
-                    objectFit="cover"
-                    alt="profile image"
-                  />
+                  <Image src={avatar} fill sizes="100%" alt="profile image" />
                 </div>
                 <p className="py-2 text-sm text-left text-gray-800 md:text-lg">
                   I&apos;m currently looking for new opportunities, my inbox is

@@ -61,23 +61,17 @@ export default function Page(params) {
           Challenge
         </h2>
         <p className="text-lg text-left text-gray-600 md:flex-1">
-          The main challenge in designing, building, and adding SEO to the
-          Community Benefit Society&apos;s website was to effectively
-          communicate their unique mission of establishing Wales&apos; first
-          Seaweed and Shellfish farm. The website needed to reflect their
-          commitment to improving the coastal environment while creating
-          year-round full-time jobs in the community. Careful consideration was
-          given to the website&apos;s design to ensure that it aligned with the
-          organisation&apos;s values and effectively conveyed their message.
-          Additionally, the website&apos;s SEO strategy was targeted towards
-          promoting the organisation&apos;s unique features and benefits, such
-          as their focus on environmental conservation and job creation. The
-          goal was to generate high levels of organic traffic to the website and
-          encourage community involvement and support for the
-          organisation&apos;s mission. Through the website, the organisation was
-          able to successfully convey their message and generate support for
-          their efforts in improving the coastal environment and creating
-          year-round full-time jobs.
+          The organization had an existing CMS website that needed a significant
+          update, including the addition of a new page, customization of a
+          theme, and adjustments to the layout. Additionally, there was a need
+          for a smaller update to the organisation&apos;s non-CMS website. The
+          website was a critical aspect of the annual event/festival and would
+          serve as a platform for presenting and archiving all the programming,
+          including concerts, performances, art exhibitions, and more. The
+          organization wanted to implement a new WordPress theme for the
+          website, which required strong CSS skills. Our team was tasked with
+          the challenge of updating the website while maintaining its
+          functionality and improving its overall design.
         </p>
       </div>
       <div className="flex flex-wrap mb-3 border-b border-dark-grey py-7">
@@ -85,26 +79,33 @@ export default function Page(params) {
           Solution
         </h2>
         <p className="text-lg text-left text-gray-600 md:flex-1">
-          To effectively design, build, and add SEO to the Community Benefit
-          Society&apos;s website, a thorough analysis of their mission, values,
-          and goals was conducted. This analysis guided the development of a
-          website that accurately and compellingly reflected their unique
-          message and value proposition. The website&apos;s design was carefully
-          crafted to align with the organisation&apos;s values, using visuals
-          and messaging that highlighted their commitment to environmental
-          conservation and job creation. In terms of SEO strategy, a thorough
-          keyword research was conducted to identify the most relevant and
-          high-traffic keywords related to the organisation&apos;s mission.
-          These keywords were then incorporated into the website&apos;s content,
-          titles, and meta descriptions to boost search engine visibility and
-          drive traffic to the site. To encourage community involvement and
-          support, the website included interactive elements such as a blog,
-          social media links, and an events calendar. These features allowed the
-          organisation to keep the community informed about their progress and
-          engage with them in ongoing conversations. The result was a website
-          that effectively communicated the organisation&apos;s unique mission
-          and generated support for their efforts to improve the coastal
-          environment and create year-round full-time jobs.
+          To address the challenges faced by the organization&apos;s website, I
+          began by analyzing their existing website and identifying areas of
+          improvement. I proposed a solution that involved implementing a new
+          WordPress theme that would improve the site&apos;s appearance,
+          usability, and functionality. First, I researched and selected a new
+          WordPress theme that would better align with the organization&apos;s
+          branding and vision. I then worked on customizing the theme to meet
+          the specific needs of the organization&apos;s website. This involved
+          using my CSS skills to adjust the layout, font sizes, colors, and
+          other design elements of the new theme to create a cohesive and
+          visually appealing website. Next, I focused on improving the
+          website&apos;s functionality by implementing new features and plugins
+          that would enhance the user experience. This included integrating a
+          user-friendly CMS to make it easier for the organization to manage
+          their content, and optimizing the website for speed and performance.
+          To ensure that the new website was user-friendly, I conducted user
+          testing and made necessary adjustments based on user feedback. I also
+          provided training to the organization&apos;s team on how to use the
+          new CMS and manage their website effectively. Overall, my solution
+          significantly improved the website&apos;s functionality, appearance,
+          and usability. The website&apos;s new features and streamlined design
+          helped to drive traffic to the organization&apos;s annual
+          event/festival, which was entirely online that year. By enhancing the
+          website&apos;s user experience, the organization was able to more
+          effectively promote their programs and increase their reach,
+          ultimately allowing them to save $4,586 in costs and use the money for
+          arts production.
         </p>
       </div>
       <div className="mb-3">

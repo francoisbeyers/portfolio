@@ -61,23 +61,15 @@ export default function Page(params) {
           Challenge
         </h2>
         <p className="text-lg text-left text-gray-600 md:flex-1">
-          The main challenge in designing, building, and adding SEO to the
-          Community Benefit Society&apos;s website was to effectively
-          communicate their unique mission of establishing Wales&apos; first
-          Seaweed and Shellfish farm. The website needed to reflect their
-          commitment to improving the coastal environment while creating
-          year-round full-time jobs in the community. Careful consideration was
-          given to the website&apos;s design to ensure that it aligned with the
-          organisation&apos;s values and effectively conveyed their message.
-          Additionally, the website&apos;s SEO strategy was targeted towards
-          promoting the organisation&apos;s unique features and benefits, such
-          as their focus on environmental conservation and job creation. The
-          goal was to generate high levels of organic traffic to the website and
-          encourage community involvement and support for the
-          organisation&apos;s mission. Through the website, the organisation was
-          able to successfully convey their message and generate support for
-          their efforts in improving the coastal environment and creating
-          year-round full-time jobs.
+          Our team was approached by NHS Wales to build a web app to assist
+          blood marrow transplant patients in achieving full fitness after their
+          surgeries. The app had to provide a platform for patients to log their
+          bloods, connect with other patients, and track their progress. There
+          were a few challenges that needed to be addressed before we could
+          start building the app. First, we had to create a user-friendly
+          interface that was easy for patients to navigate. Second, we had to
+          ensure that the app complied with strict data protection and privacy
+          regulations.
         </p>
       </div>
       <div className="flex flex-wrap mb-3 border-b border-dark-grey py-7">
@@ -85,26 +77,22 @@ export default function Page(params) {
           Solution
         </h2>
         <p className="text-lg text-left text-gray-600 md:flex-1">
-          To effectively design, build, and add SEO to the Community Benefit
-          Society&apos;s website, a thorough analysis of their mission, values,
-          and goals was conducted. This analysis guided the development of a
-          website that accurately and compellingly reflected their unique
-          message and value proposition. The website&apos;s design was carefully
-          crafted to align with the organisation&apos;s values, using visuals
-          and messaging that highlighted their commitment to environmental
-          conservation and job creation. In terms of SEO strategy, a thorough
-          keyword research was conducted to identify the most relevant and
-          high-traffic keywords related to the organisation&apos;s mission.
-          These keywords were then incorporated into the website&apos;s content,
-          titles, and meta descriptions to boost search engine visibility and
-          drive traffic to the site. To encourage community involvement and
-          support, the website included interactive elements such as a blog,
-          social media links, and an events calendar. These features allowed the
-          organisation to keep the community informed about their progress and
-          engage with them in ongoing conversations. The result was a website
-          that effectively communicated the organisation&apos;s unique mission
-          and generated support for their efforts to improve the coastal
-          environment and create year-round full-time jobs.
+          To address the challenges, we first conducted thorough research to
+          understand the requirements and expectations of the end-users. Based
+          on our findings, we built a web app using React Native, a popular
+          framework for mobile app development. The app included several
+          features such as logging bloods, a dashboard to track progress, and a
+          social feature where users could connect with others undergoing
+          similar treatment. To make the app user-friendly, we used a clean and
+          simple design with a dashboard that presented the user&apos;s progress
+          through easy-to-read graphs. Additionally, we built a functionality
+          that enabled patients to track and schedule their exercises, making it
+          easy to keep up with their fitness goals. To ensure the app was secure
+          and complied with privacy regulations, we implemented various security
+          features such as two-factor authentication, encrypted data storage,
+          and HIPAA compliance. We worked closely with NHS Wales to ensure that
+          the app met all of their requirements and was safe to use by their
+          patients.
         </p>
       </div>
       <div className="mb-3">

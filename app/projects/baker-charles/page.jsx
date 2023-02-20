@@ -6,6 +6,7 @@ import bcMain from "../../../public/www.bakercharles.com_.png";
 import bcIphone1 from "../../../public/bc_iphone_mockup.png";
 import bcIphone2 from "../../../public/bc_iphone_mockup2.png";
 import bcMac from "../../../public/bc_mac_mockup.png";
+import Link from "next/link";
 
 export default function Page(params) {
   const titleAnim = {
@@ -42,10 +43,6 @@ export default function Page(params) {
           className="py-4 text-3xl text-gray-600 md:text-5xl"
         >
           <span>Design</span>
-          {", "}
-          <span>Development</span>
-          {", "}
-          <span>SEO</span>
         </motion.div>
       </motion.div>
       <div className="w-full mt-10 mb-3">
@@ -134,6 +131,30 @@ export default function Page(params) {
           sizes="(min-width: 768px) 90vw, 90vw"
           className="object-cover w-full"
         />
+      </div>
+      <div className="flex">
+        <Link
+          className="font-bold leading-[1.1] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[3vw] md:leading-[1.1] mr-auto block relative overflow-hidden group"
+          href="/projects/rasa-festival"
+        >
+          <span className="block transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-[-100%]">
+            Previous
+          </span>
+          <span className="block absolute inset-0 translate-y-full transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-0">
+            Previous
+          </span>
+        </Link>
+        <Link
+          className="font-bold leading-[1.1] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[3vw] md:leading-[1.1] ml-auto block relative overflow-hidden group"
+          href="/projects/bmt-connect"
+        >
+          <span className="block transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-[-100%]">
+            Next
+          </span>
+          <span className="block absolute inset-0 translate-y-full transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-0">
+            Next
+          </span>
+        </Link>
       </div>
     </main>
   );

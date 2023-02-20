@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import bmtMain from "../../../public/bmt_iphone_mockup.png";
 import bmtIphone1 from "../../../public/bmt_iphone_mockup1.png";
 import bmtIphone2 from "../../../public/bmt_iphone_mockup2.png";
@@ -41,11 +42,7 @@ export default function Page(params) {
           variants={titleAnim}
           className="py-4 text-3xl text-gray-600 md:text-5xl"
         >
-          <span>Design</span>
-          {", "}
           <span>Development</span>
-          {", "}
-          <span>SEO</span>
         </motion.div>
       </motion.div>
       <div className="w-full mt-10 mb-3">
@@ -122,6 +119,19 @@ export default function Page(params) {
           sizes="(min-width: 768px) 90vw, 90vw"
           className="object-cover w-full"
         />
+      </div>
+      <div className="flex">
+        <Link
+          className="font-bold leading-[1.1] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[3vw] md:leading-[1.1] mr-auto block relative overflow-hidden group"
+          href="/projects/baker-charles"
+        >
+          <span className="block transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-[-100%]">
+            Previous
+          </span>
+          <span className="block absolute inset-0 translate-y-full transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-0">
+            Previous
+          </span>
+        </Link>
       </div>
     </main>
   );

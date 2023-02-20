@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import cymMain from "../../../public/cym_homepage_mockup.jpg";
 import cymIphone1 from "../../../public/cym_iphone_mockup.png";
 import cymIphone2 from "../../../public/cym_iphone_mockup2.png";
@@ -134,6 +135,19 @@ export default function Page(params) {
           sizes="(min-width: 768px) 90vw, 90vw"
           className="object-cover w-full"
         />
+      </div>
+      <div className="flex">
+        <Link
+          className="font-bold leading-[1.1] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[3vw] md:leading-[1.1] ml-auto block relative overflow-hidden group"
+          href="/projects/rasa-festival"
+        >
+          <span className="block transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-[-100%]">
+            Next
+          </span>
+          <span className="block absolute inset-0 translate-y-full transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-0">
+            Next
+          </span>
+        </Link>
       </div>
     </main>
   );

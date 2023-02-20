@@ -32,7 +32,7 @@ const ProjectList = ({ projects }) => {
       variants={container}
       initial="hidden"
       animate="show"
-      className="w-full md:p-10"
+      className="w-full"
     >
       <ul>
         {projects.map((project, index) => (

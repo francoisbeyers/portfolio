@@ -140,7 +140,7 @@ export default function Page(params) {
       <div className="flex">
         <Link
           className="font-bold leading-[1.1] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[3vw] md:leading-[1.1] mr-auto block relative overflow-hidden group"
-          href="/projects/car-y-mor"
+          href="/projects/bmt-connect"
         >
           <span className="block transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-[-100%]">
             Previous

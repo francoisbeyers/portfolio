@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${clash.variable}`}>
       <head />
-      <body className="flex flex-col justify-between px-10 md:px-20 lg:px-40 bg-stone-200 scroll-smooth selection:bg-dark-grey selection:text-gray-100">
+      <body className="flex flex-col justify-between h-screen px-10 mx-auto bg-stone-200 scroll-smooth selection:bg-dark-grey selection:text-gray-100 max-w-[2560px]">
         <header className="left-0 mb-4 pt-[10px] right-0 top-0 z-[100] mt-2 border-dark-grey border-b">
           <div className="flex flex-wrap mb-2 font-bold text-[28px] lg:text-[32px] leading-none md:leading-[0.95] lg:leading-[0.95] items-center">
             <div className="w-[35%] md:w-[45%] lg:w-[60%]">
@@ -101,8 +101,8 @@ export default function RootLayout({ children }) {
                   always open.
                 </p>
               </div>
-              <a
-                className="flex items-center justify-center px-4 py-2 text-4xl text-gray-800 uppercase hover:duration-500 font-clash"
+              <Link
+                className="flex items-center justify-center px-4 py-2 text-gray-800 uppercase md:text-4xl hover:duration-500 font-clash"
                 href="mailto:francois@beyers.tech"
               >
                 Send an
@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
                 >
                   email
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -144,17 +144,6 @@ export default function Page(params) {
             Previous
           </span>
         </Link>
-        <Link
-          className="font-bold leading-[1.1] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[3vw] md:leading-[1.1] ml-auto block relative overflow-hidden group"
-          href="/projects/bmt-connect"
-        >
-          <span className="block transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-[-100%]">
-            Next
-          </span>
-          <span className="block absolute inset-0 translate-y-full transition-translate ease-in-out duration-[350ms] md:group-hover:translate-y-0">
-            Next
-          </span>
-        </Link>
       </div>
     </main>
   );

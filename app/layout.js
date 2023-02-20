@@ -14,30 +14,30 @@ const clash = localFont({
 });
 
 export default function RootLayout({ children }) {
-  // const [time, setTime] = useState(
-  //   new Date().toLocaleTimeString([], {
-  //     hour: "2-digit",
-  //     minute: "2-digit",
-  //   })
-  // );
+  const [time, setTime] = useState(
+    new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+  );
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setTime(
-  //       new Date().toLocaleTimeString([], {
-  //         hour: "2-digit",
-  //         minute: "2-digit",
-  //       })
-  //     );
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(
+        new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      );
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <html lang="en" className={`${clash.variable}`}>
       <head />
       <body className="flex flex-col justify-between px-10 md:px-20 lg:px-40 bg-stone-200 scroll-smooth selection:bg-dark-grey selection:text-gray-100">
-        <header className="left-0 mb-3 pt-[10px] right-0 top-0 z-[100] mt-2 border-dark-grey border-b">
-          <div className="flex flex-wrap font-bold text-[28px] lg:text-[32px] leading-none md:leading-[0.95] lg:leading-[0.95] items-center">
+        <header className="left-0 mb-4 pt-[10px] right-0 top-0 z-[100] mt-2 border-dark-grey border-b">
+          <div className="flex flex-wrap mb-2 font-bold text-[28px] lg:text-[32px] leading-none md:leading-[0.95] lg:leading-[0.95] items-center">
             <div className="w-[35%] md:w-[45%] lg:w-[60%]">
               <Link href={"/"} className="py-2">
                 beyers
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
             </div>
             <nav className="ml-auto flex w-[65%] md:w-[55%] lg:w-[40%] items-center">
               <div className="flex justify-end w-full space-x-1 lg:space-x-2 md:w-auto md:justify-start">
-                <Link
+                {/* <Link
                   className="group relative block overflow-hidden opacity-[1] transition-opacity duration-300 ease-in-out hover:opacity-[1]"
                   href="/"
                 >
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
                     Projects
                   </span>
                 </Link>
-                {/* <Link
+                <Link
                   className="block relative overflow-hidden py-2 group opacity-[0.25] hover:opacity-[1] transition-opacity ease-in-out duration-300"
                   href="/"
                 >
@@ -80,10 +80,10 @@ export default function RootLayout({ children }) {
                 </Link> */}
               </div>
               <span
-                // suppressHydrationWarning={true}
+                suppressHydrationWarning={true}
                 className="hidden ml-auto font-normal md:block"
               >
-                {/* {time} */}
+                {time}
               </span>
             </nav>
           </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { BiLinkExternal } from "react-icons/bi";
 import rasaMain from "../../../public/rasafestival.org_.png";
 import rasaIphone1 from "../../../public/rasa_iphone_mockup.png";
 import rasaIphone2 from "../../../public/rasa_iphone_mockup2.png";
@@ -47,6 +48,11 @@ export default function Page(params) {
           <span>Development</span>
           {", "}
           <span>SEO</span>
+        </motion.div>
+        <motion.div variants={titleAnim} className="text-2xl text-gray-600">
+          <Link href="https://rasafestival.org/">
+            <BiLinkExternal />
+          </Link>
         </motion.div>
       </motion.div>
       <div className="w-full mt-10 mb-3">

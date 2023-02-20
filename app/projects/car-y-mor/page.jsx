@@ -1,5 +1,7 @@
 "use client";
 
+import { BiLinkExternal } from "react-icons/bi";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -47,6 +49,11 @@ export default function Page(params) {
           <span>Development</span>
           {", "}
           <span>SEO</span>
+        </motion.div>
+        <motion.div variants={titleAnim} className="text-2xl text-gray-600">
+          <Link href="https://carymor.wales">
+            <BiLinkExternal />
+          </Link>
         </motion.div>
       </motion.div>
       <div className="w-full mt-10 mb-3">

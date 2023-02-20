@@ -7,6 +7,7 @@ import bcIphone1 from "../../../public/bc_iphone_mockup.png";
 import bcIphone2 from "../../../public/bc_iphone_mockup2.png";
 import bcMac from "../../../public/bc_mac_mockup.png";
 import Link from "next/link";
+import { BiLinkExternal } from "react-icons/bi";
 
 export default function Page(params) {
   const titleAnim = {
@@ -43,6 +44,11 @@ export default function Page(params) {
           className="py-4 text-3xl text-gray-600 md:text-5xl"
         >
           <span>Design</span>
+        </motion.div>
+        <motion.div variants={titleAnim} className="text-2xl text-gray-600">
+          <Link href="https://www.bakercharles.com/">
+            <BiLinkExternal />
+          </Link>
         </motion.div>
       </motion.div>
       <div className="w-full mt-10 mb-3">

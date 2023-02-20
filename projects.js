@@ -5,6 +5,7 @@ const projects = [
     type: "Design, Development, SEO",
     year: 2022,
     link: "/projects/car-y-mor",
+    url: "https://www.carymor.wales/",
   },
   {
     id: 4,
@@ -12,6 +13,7 @@ const projects = [
     type: "Full-stack",
     year: 2021,
     link: "/projects/bmt-connect",
+    url: "",
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const projects = [
     type: "Design, Development, SEO",
     year: 2020,
     link: "/projects/rasa-festival",
+    url: "https://rasafestival.org/",
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const projects = [
     type: "Design",
     year: 2020,
     link: "/projects/baker-charles",
+    url: "https://www.bakercharles.com/",
   },
 ];
 

@@ -93,8 +93,14 @@ export default function RootLayout({ children }) {
           <div className="py-4 mx-auto border-t border-b border-dark-grey">
             <div className="justify-center text-center md:flex md:justify-between ">
               <div className="flex items-center">
-                <div className="relative w-20 h-20 p-10 mr-8 overflow-hidden rounded-full bg-orange md:h-20 md:w-20">
-                  <Image src={avatar} fill sizes="100%" alt="profile image" />
+                <div className="relative block w-20 h-20 p-10 mr-8 overflow-hidden rounded-full bg-orange md:h-20 md:w-20">
+                  <Image
+                    src={avatar}
+                    fill
+                    sizes="100%"
+                    className="object-cover"
+                    alt="profile image"
+                  />
                 </div>
                 <p className="py-2 text-sm text-left text-gray-800 md:text-lg">
                   I&apos;m currently looking for new opportunities, my inbox is

@@ -39,14 +39,9 @@ const ProjectList = ({ projects }) => {
           <motion.li
             variants={projectsTitle}
             key={project.id}
-            className={`mb-0 pb-0 block ${
-              index > 0 ? "border-t border-dark-grey" : ""
-            }`}
+            className="block pb-0 mb-0 border-t border-dark-grey hover:transition-opacity hover:ease-in-out duration-[350ms] hover:text-orange"
           >
-            <Link
-              className="pt-[10px] pb-[40px] flex opacity-[0.25] transition-opacity ease-in-out duration-[350ms] hover:opacity-[1]"
-              href={project.link}
-            >
+            <Link className="pt-[10px] pb-[40px] flex" href={project.link}>
               <div className="w-full md:w-[45%] lg:w-[60%]">
                 <div className="block font-clash text-[28px] lg:text-[32px] leading-none">
                   <div className="relative overflow-hidden">

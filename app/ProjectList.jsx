@@ -33,6 +33,7 @@ const ProjectList = ({ projects }) => {
       initial="hidden"
       animate="show"
       className="w-full"
+      id="projects"
     >
       <ul>
         {projects.map((project, index) => (

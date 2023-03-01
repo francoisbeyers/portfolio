@@ -47,35 +47,24 @@ export default function RootLayout({ children }) {
               <div className="flex justify-end w-full space-x-1 lg:space-x-2 md:w-auto md:justify-start">
                 {/* <Link
                   className="group relative block overflow-hidden opacity-[1] transition-opacity duration-300 ease-in-out hover:opacity-[1]"
-                  href="/"
+                  href="#projects"
                 >
                   <span className="block transition-transform duration-[350ms] ease-in-out md:group-hover:translate-y-[-110%] py-2">
-                    Projects
+                    Projects,
                   </span>
                   <span className="transition-translate absolute inset-0 block translate-y-full duration-[350ms] ease-in-out md:group-hover:translate-y-0 py-2">
-                    Projects
-                  </span>
-                </Link>
-                <Link
-                  className="block relative overflow-hidden py-2 group opacity-[0.25] hover:opacity-[1] transition-opacity ease-in-out duration-300"
-                  href="/"
-                >
-                  <span className="block transition-transform duration-[350ms] ease-in-out md:group-hover:translate-y-[-110%]">
-                    Projects,
-                  </span>
-                  <span className="transition-translate absolute inset-0 block translate-y-full duration-[350ms] ease-in-out md:group-hover:translate-y-0">
                     Projects,
                   </span>
                 </Link>
                 <Link
-                  className="block relative overflow-hidden py-2 group opacity-[0.25] hover:opacity-[1] transition-opacity ease-in-out duration-300"
-                  href="/"
+                  className="group relative block overflow-hidden opacity-[1] transition-opacity duration-300 ease-in-out hover:opacity-[1]"
+                  href="#projects"
                 >
-                  <span className="block transition-transform duration-[350ms] ease-in-out md:group-hover:translate-y-[-110%]">
-                    Projects
+                  <span className="block transition-transform duration-[350ms] ease-in-out md:group-hover:translate-y-[-110%] py-2">
+                    Bio
                   </span>
-                  <span className="transition-translate absolute inset-0 block translate-y-full duration-[350ms] ease-in-out md:group-hover:translate-y-0">
-                    Projects,
+                  <span className="transition-translate absolute inset-0 block translate-y-full duration-[350ms] ease-in-out md:group-hover:translate-y-0 py-2">
+                    Bio
                   </span>
                 </Link> */}
               </div>

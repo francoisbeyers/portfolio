@@ -35,9 +35,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${clash.variable}`}>
       <head />
-      <body className="flex flex-col justify-between h-screen px-10 mx-auto bg-stone-200 scroll-smooth selection:bg-dark-grey selection:text-gray-100 max-w-[2560px]">
-        <header className="left-0 mb-4 pt-[10px] right-0 top-0 z-[100] mt-2 border-dark-grey border-b">
-          <div className="flex flex-wrap mb-2 font-bold text-[28px] lg:text-[32px] leading-none md:leading-[0.95] lg:leading-[0.95] items-center">
+      <body className="flex flex-col justify-between min-h-screen mx-auto bg-stone-200 scroll-smooth selection:bg-dark-grey selection:text-gray-100 max-w-[2560px]">
+        <header className="left-0 mb-4 pt-[10px] right-0 top-0 z-[100] mt-2 sticky backdrop-blur-sm">
+          <div className="flex flex-wrap mb-2 font-bold text-[28px] lg:text-[32px] leading-none md:leading-[0.95] lg:leading-[0.95] items-center px-10">
             <div className="w-[35%] md:w-[45%] lg:w-[60%]">
               <Link href={"/"} className="py-2">
                 beyers
@@ -88,8 +88,8 @@ export default function RootLayout({ children }) {
             </nav>
           </div>
         </header>
-        <div>{children}</div>
-        <footer className="pt-10 pb-10">
+        <div className="px-10 ">{children}</div>
+        <footer className="px-10 pt-10 pb-10">
           <div className="py-4 mx-auto border-t border-b border-dark-grey">
             <div className="justify-center text-center md:flex md:justify-between ">
               <div className="flex items-center">

@@ -40,7 +40,7 @@ const ProjectList = ({ projects }) => {
           <motion.li
             variants={projectsTitle}
             key={project.id}
-            className="block pb-0 mb-0 border-t border-dark-grey hover:transition-opacity hover:ease-in-out duration-[350ms] hover:text-orange"
+            className="block pb-0 mb-0 border-t border-dark-grey hover:transition-opacity hover:ease-in-out duration-[350ms] hover:text-orange text-gray-400"
           >
             <Link className="pt-[10px] pb-[40px] flex" href={project.link}>
               <div className="w-full md:w-[45%] lg:w-[60%]">

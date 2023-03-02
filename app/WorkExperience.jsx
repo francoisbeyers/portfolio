@@ -7,8 +7,8 @@ import resumeYS from "../public/Resume-yellowsub.jpg";
 export default function WorkExperience() {
   return (
     <section className="my-10">
-      <div className="p-6 mx-auto border md:w-1/2 rounded-2xl border-gray-800/40">
-        <h2 className="flex text-sm font-semibold text-zinc-900">
+      <div className="p-6 mx-auto border border-gray-400 md:w-1/2 rounded-2xl">
+        <h2 className="flex text-sm font-semibold text-gray-400">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -171,14 +171,14 @@ export default function WorkExperience() {
           alt="pdf resume"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-full gap-2 px-3 py-2 mt-6 text-sm font-medium text-gray-800 transition border rounded-md group border-dark-grey hover:text-gray-200 outline-offset-2 hover:bg-dark-grey active:bg-dark-grey active:text-gray-200 active:transition-none hover:duration-500"
+          className="inline-flex items-center justify-center w-full gap-2 px-3 py-2 mt-6 text-sm font-medium text-gray-400 transition border border-gray-400 rounded-md group hover:text-orange outline-offset-2 hover:bg-gray-400 active:bg-gray-400 active:text-orange active:transition-none hover:duration-500"
         >
           Download CV
           <svg
             viewBox="0 0 16 16"
             fill="none"
             aria-hidden="true"
-            className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
+            className="w-4 h-4 transition stroke-gray-400 group-active:stroke-gray-600 dark:group-hover:stroke-gray-50 dark:group-active:stroke-orange"
           >
             <path
               d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"

@@ -50,13 +50,13 @@ export default function Home() {
         >
           <motion.h1
             variants={titleAnim}
-            className="py-2 text-lg md:text-xl text-dark-grey"
+            className="py-2 text-lg text-gray-600 md:text-xl"
           >
             hi, i&apos;m{" "}
           </motion.h1>
           <motion.h2
             variants={titleAnim}
-            className="py-2 text-5xl text-dark-grey font-clash md:text-9xl"
+            className="py-2 text-5xl text-gray-400 font-clash md:text-9xl"
           >
             Francois Beyers
           </motion.h2>
@@ -87,22 +87,22 @@ export default function Home() {
       <section>
         <div>
           <div className="py-10 text-center">
-            <h3 className="py-1 text-gray-800 font-clash ">Services I offer</h3>
+            <h3 className="py-1 text-gray-600 font-clash ">Services I offer</h3>
           </div>
           <div className="justify-center mt-8 mb-8 space-y-8 md:columns-2 md:flex md:gap-12 md:space-y-0">
             <div className="space-y-8">
-              <h3 className="text-4xl font-thin text-center text-gray-800 underline md:text-5xl font-clash">
+              <h3 className="text-4xl font-thin text-center text-gray-400 underline md:text-5xl font-clash">
                 Web & Mobile Development
               </h3>
-              <h3 className="text-4xl font-thin text-center text-gray-800 md:text-5xl font-clash">
+              <h3 className="text-4xl font-thin text-center text-gray-400 md:text-5xl font-clash">
                 Chrome Extensions
               </h3>
             </div>
             <div className="space-y-8">
-              <h3 className="text-4xl font-thin text-center text-gray-800 md:text-5xl font-clash">
+              <h3 className="text-4xl font-thin text-center text-gray-400 md:text-5xl font-clash">
                 SEO & Digital Marketing
               </h3>
-              <h3 className="text-4xl font-thin text-center text-gray-800 md:text-5xl font-clash">
+              <h3 className="text-4xl font-thin text-center text-gray-400 md:text-5xl font-clash">
                 Consulting & Training
               </h3>
             </div>

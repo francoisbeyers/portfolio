@@ -35,9 +35,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${clash.variable}`}>
       <head />
-      <body className="flex flex-col justify-between min-h-screen mx-auto bg-stone-200 scroll-smooth selection:bg-dark-grey selection:text-gray-100 max-w-[2560px]">
-        <header className="left-0 mb-4 pt-[10px] right-0 top-0 z-[100] mt-2 sticky backdrop-blur-sm">
-          <div className="flex flex-wrap mb-2 font-bold text-[28px] lg:text-[32px] leading-none md:leading-[0.95] lg:leading-[0.95] items-center px-10">
+      <body className="flex flex-col justify-between min-h-screen mx-auto bg-gray-900 scroll-smooth selection:bg-dark-grey selection:text-gray-100 max-w-[2560px]">
+        <header className="left-0 mb-4 pt-[10px] right-0 top-0 z-[100] mt-2 sticky backdrop-blur-sm text-orange">
+          <div className="flex flex-wrap mb-2 font-bold text-[28px] lg:text-[32px] leading-none md:leading-[0.95] lg:leading-[0.95] items-center px-10 ">
             <div className="w-[35%] md:w-[45%] lg:w-[60%]">
               <Link href={"/"} className="py-2">
                 beyers
@@ -91,13 +91,13 @@ export default function RootLayout({ children }) {
                     alt="profile image"
                   />
                 </div>
-                <p className="py-2 text-sm text-left text-gray-800 md:text-lg">
+                <p className="py-2 text-sm text-left text-gray-400 md:text-lg">
                   I&apos;m currently looking for new opportunities, my inbox is
                   always open.
                 </p>
               </div>
               <Link
-                className="flex items-center justify-center px-4 py-2 text-gray-800 uppercase md:text-4xl hover:duration-500 font-clash"
+                className="flex items-center justify-center px-4 py-2 text-gray-400 uppercase md:text-4xl hover:duration-500 font-clash"
                 href="mailto:francois@beyers.tech"
               >
                 Send an
@@ -116,21 +116,21 @@ export default function RootLayout({ children }) {
 
           <div className="flex items-center justify-between text-center md:flex-row">
             <ul className="flex py-2 text-sm md:flex-row">
-              <li className="px-2 text-gray-800 uppercase">
+              <li className="px-2 text-gray-400 uppercase">
                 <a href="https://www.linkedin.com/in/francois-beyers/">
                   LinkedIn
                 </a>
               </li>
-              <li className="px-2 text-gray-800 uppercase">
+              <li className="px-2 text-gray-400 uppercase">
                 <a href="https://www.instagram.com/francoisbeyers/">
                   Instagram
                 </a>
               </li>
-              <li className="px-2 text-gray-800 uppercase">
+              <li className="px-2 text-gray-400 uppercase">
                 <a href="https://twitter.com/BeyersFrancois">Twitter</a>
               </li>
             </ul>
-            <p className="py-2 text-sm text-gray-800 md:py-0">
+            <p className="py-2 text-sm text-gray-400 md:py-0">
               © {new Date().getFullYear()}
             </p>
           </div>

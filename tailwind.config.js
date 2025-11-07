@@ -6,9 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         clash: ["var(--font-clash)"],
-        'pixel': ['monospace'],
-        'mono': ['Courier New', 'monospace'],
-        'comic': ['Comic Sans MS', 'cursive'],
+        display: ['Clash Display', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       container: {
         center: true,
@@ -21,68 +20,52 @@ module.exports = {
         },
       },
       colors: {
-        // Retro color palette
-        'retro-cyan': '#00FFFF',
-        'retro-magenta': '#FF00FF',
-        'retro-yellow': '#FFFF00',
-        'retro-lime': '#00FF00',
-        'retro-blue': '#0000FF',
-        'retro-red': '#FF0000',
-        'retro-black': '#000000',
-        'retro-gray': '#C0C0C0',
-        'retro-darkgray': '#808080',
-        'retro-purple': '#800080',
-        'win95-teal': '#008080',
-        'win95-blue': '#000080',
-        'win95-silver': '#C0C0C0',
-        // Original colors
+        // Klarna-inspired palette
+        'pink': '#FFB3C7',
+        'cyan': '#99F8FF',
+        'yellow': '#FFF999',
+        'lavender': '#F0E3FF',
+        'peach': '#FFE6CC',
+        'mint': '#9EFFBB',
+        'light-blue': '#D1E2FF',
+        'off-white': '#F9F9F9',
+        'charcoal': '#1A1A1A',
+        // Original colors for compatibility
         orange: "#dc562e",
         "dark-grey": "#101010",
-        "opaque-black": "rgba(0,0,0,0.35)",
       },
       animation: {
-        'blink': 'blink 1s step-end infinite',
-        'rainbow': 'rainbow 3s linear infinite',
-        'float': 'float 3s ease-in-out infinite',
-        'glitch': 'glitch 0.5s infinite',
-        'marquee': 'marquee 20s linear infinite',
+        'fade-in': 'fadeIn 0.6s ease-out',
+        'slide-up': 'slideUp 0.6s ease-out',
+        'scale-in': 'scaleIn 0.5s ease-out',
+        'float-slow': 'floatSlow 6s ease-in-out infinite',
       },
       keyframes: {
-        blink: {
-          '0%, 50%': { opacity: '1' },
-          '51%, 100%': { opacity: '0' },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
-        rainbow: {
-          '0%': { color: '#FF0000' },
-          '14%': { color: '#FF7F00' },
-          '28%': { color: '#FFFF00' },
-          '42%': { color: '#00FF00' },
-          '57%': { color: '#0000FF' },
-          '71%': { color: '#4B0082' },
-          '85%': { color: '#9400D3' },
-          '100%': { color: '#FF0000' },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        float: {
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        floatSlow: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glitch: {
-          '0%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 2px)' },
-          '40%': { transform: 'translate(-2px, -2px)' },
-          '60%': { transform: 'translate(2px, 2px)' },
-          '80%': { transform: 'translate(2px, -2px)' },
-          '100%': { transform: 'translate(0)' },
-        },
-        marquee: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
       boxShadow: {
-        'retro': '4px 4px 0px 0px rgba(0,0,0,1)',
-        'retro-hover': '6px 6px 0px 0px rgba(0,0,0,1)',
-        'win95': 'inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff',
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        'glow': '0 0 20px rgba(255, 179, 199, 0.3)',
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
       },
     },
   },

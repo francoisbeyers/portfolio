@@ -21,98 +21,85 @@ const ServicesGrid = () => {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
+  const serviceColors = [
+    'bg-pink',
+    'bg-cyan',
+    'bg-yellow',
+    'bg-lavender',
+    'bg-peach',
+    'bg-mint',
+  ];
+
   return (
-    <section className="py-16 md:py-24">
-      <div className="text-center mb-12 md:mb-16">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-5xl lg:text-6xl font-clash mb-4"
+    <section className="py-20 px-4 bg-off-white">
+      <div className="container mx-auto max-w-7xl">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          Services I Offer
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
-        >
-          From SEO to AI automation, I help businesses grow their online presence and streamline operations
-        </motion.p>
-      </div>
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-      >
-        {services.map((service) => (
-          <motion.div
-            key={service.id}
-            variants={item}
-            className="group relative bg-white border border-dark-grey p-6 md:p-8 hover:shadow-xl transition-all duration-300"
-          >
-            {/* Icon */}
-            <div className="text-5xl md:text-6xl mb-4">{service.icon}</div>
-
-            {/* Title */}
-            <h3 className="text-2xl md:text-3xl font-clash mb-3">
-              {service.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              {service.description}
-            </p>
-
-            {/* Pricing */}
-            {service.pricing && (
-              <div className="mb-6">
-                <p className="text-sm text-gray-500">{service.pricing.type}</p>
-                <p className="text-xl font-bold text-dark-grey">
-                  {service.pricing.starting}
-                </p>
-              </div>
-            )}
-
-            {/* CTA */}
-            <Link
-              href={`/services/${service.slug}`}
-              className="inline-block border-b-2 border-dark-grey pb-1 group-hover:border-orange transition-colors duration-300"
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              variants={item}
+              className="group"
             >
-              <span className="text-sm md:text-base font-medium uppercase tracking-wide">
-                Learn More →
-              </span>
-            </Link>
+              <Link href={`/services/${service.slug}`}>
+                <div className={`${serviceColors[index % serviceColors.length]} p-8 rounded-3xl hover:scale-105 transition-transform cursor-pointer h-full flex flex-col`}>
+                  {/* Icon */}
+                  <div className="text-5xl mb-4">{service.icon}</div>
 
-            {/* Hover effect overlay */}
-            <div className="absolute inset-0 border-2 border-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-          </motion.div>
-        ))}
-      </motion.div>
+                  {/* Title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-charcoal mb-3">
+                    {service.title}
+                  </h3>
 
-      {/* CTA Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5 }}
-        className="text-center mt-16"
-      >
-        <p className="text-lg mb-6 text-gray-600">
-          Not sure which service you need?
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block px-8 py-4 bg-dark-grey text-white hover:bg-orange transition-colors duration-300 text-lg font-medium"
+                  {/* Description */}
+                  <p className="text-charcoal/80 mb-6 leading-relaxed flex-grow">
+                    {service.description}
+                  </p>
+
+                  {/* Pricing */}
+                  {service.pricing && (
+                    <div className="mb-6">
+                      <p className="text-sm text-charcoal/60">{service.pricing.type}</p>
+                      <p className="text-xl font-bold text-charcoal">
+                        {service.pricing.starting}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* CTA */}
+                  <div className="inline-block px-6 py-3 bg-charcoal text-white rounded-full font-bold group-hover:scale-105 transition-transform w-fit">
+                    Learn More →
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-16"
         >
-          Let's Talk About Your Project
-        </Link>
-      </motion.div>
+          <p className="text-xl text-charcoal/70 mb-6">
+            Not sure which service you need?
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-4 bg-charcoal text-white rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-soft"
+          >
+            Let's Talk About Your Project
+          </Link>
+        </motion.div>
+      </div>
     </section>
   );
 };

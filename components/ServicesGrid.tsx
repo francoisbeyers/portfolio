@@ -28,9 +28,9 @@ const ServicesGrid = () => {
               className="group"
             >
               <Link href={`/services/${service.slug}`}>
-                <div className={`${serviceColors[index % serviceColors.length]} p-container rounded-klarna transition-all duration-klarna cursor-pointer h-full flex flex-col`}>
+                <div className={`${serviceColors[index % serviceColors.length]} p-container rounded-klarna transition-all duration-klarna cursor-pointer h-full flex flex-col overflow-hidden`}>
                   {/* Title */}
-                  <h3 className="text-display-sm font-display font-bold text-charcoal mb-4">
+                  <h3 className="font-display font-bold text-charcoal mb-4 break-words" style={{ fontSize: 'clamp(20px, 2.5vw, 36px)', lineHeight: '1.15' }}>
                     {service.title}
                   </h3>
 

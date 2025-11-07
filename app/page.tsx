@@ -122,9 +122,9 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, delay: index * 0.05 }}
-                className={`${service.color} p-container rounded-klarna transition-all duration-klarna cursor-pointer group`}
+                className={`${service.color} p-container rounded-klarna transition-all duration-klarna cursor-pointer group overflow-hidden`}
               >
-                <h3 className="text-display-sm font-display font-bold text-charcoal mb-4">
+                <h3 className="font-display font-bold text-charcoal mb-4 break-words" style={{ fontSize: 'clamp(20px, 2.5vw, 36px)', lineHeight: '1.15' }}>
                   {service.title}
                 </h3>
                 <p className="text-body-md text-charcoal/80">

@@ -40,14 +40,14 @@ export default function ProjectsPage() {
                 className="group"
               >
                 <Link href={project.link}>
-                  <div className={`${projectColors[index % projectColors.length]} p-container rounded-klarna transition-all duration-klarna cursor-pointer h-full flex flex-col`}>
+                  <div className={`${projectColors[index % projectColors.length]} p-container rounded-klarna transition-all duration-klarna cursor-pointer h-full flex flex-col overflow-hidden`}>
                     {/* Year Badge */}
                     <div className="text-body-sm font-bold text-charcoal/60 mb-3">
                       {project.year}
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-display-sm font-display font-bold text-charcoal mb-4">
+                    <h2 className="font-display font-bold text-charcoal mb-4 break-words" style={{ fontSize: 'clamp(22px, 2.8vw, 42px)', lineHeight: '1.15' }}>
                       {project.title}
                     </h2>
 

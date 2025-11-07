@@ -2,40 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
 @font-face {
-  font-family: "Amiri", serif;
-  src: url("../public/Amiri-Bold.ttf");
-}
-@font-face {
-  font-family: "Clash Display", san-serif;
+  font-family: "Clash Display";
   src: url("../public/ClashDisplay-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 20px #5b5b5b;
+@font-face {
+  font-family: "Clash Display";
+  src: url("../public/ClashDisplay-Bold.woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  to {
-    text-shadow: 0 0 10px #6b6b6b, 0 0 10px #7b7b7b;
+
+  body {
+    @apply bg-off-white text-charcoal;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-clash), 'Clash Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Klarna-style headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-clash), 'Clash Display', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  /* Klarna-style body text */
+  p {
+    letter-spacing: -0.02em;
+    line-height: 1.3;
   }
 }
 
-.glow-text {
-  animation: glow 2s ease-in-out infinite alternate;
+@layer utilities {
+  /* Klarna button styles */
+  .btn-klarna {
+    @apply border-2 border-current rounded-klarna font-bold transition-klarna duration-klarna;
+    padding: max(15px, 1.481vw) max(23px, 1.7vw);
+    font-size: 16px;
+    font-family: var(--font-clash), 'Clash Display', sans-serif;
+  }
+
+  .btn-klarna:hover {
+    @apply bg-transparent;
+  }
+
+  .btn-klarna-primary {
+    @apply btn-klarna bg-charcoal text-off-white border-charcoal;
+  }
+
+  .btn-klarna-primary:hover {
+    @apply bg-transparent text-charcoal;
+  }
+
+  .btn-klarna-secondary {
+    @apply btn-klarna bg-transparent text-charcoal border-charcoal;
+  }
+
+  /* Remove all shadows for flat Klarna design */
+  .shadow-soft,
+  .shadow-glow {
+    box-shadow: none !important;
+  }
 }

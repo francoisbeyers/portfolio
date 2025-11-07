@@ -39,87 +39,84 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-off-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-peach via-pink to-lavender">
+      <section className="py-section px-container bg-gradient-to-br from-peach via-pink to-lavender">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="container mx-auto max-w-5xl text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+          className="container mx-auto max-w-6xl text-center"
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-charcoal mb-6 leading-tight">
+          <h1 className="text-display-lg font-display font-bold text-charcoal mb-8">
             Let's Work Together
           </h1>
-          <p className="text-xl md:text-2xl text-charcoal/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-body-lg text-charcoal/80 max-w-4xl mx-auto">
             Have a project in mind? I'd love to hear about it. Drop me a message and let's create something amazing.
           </p>
         </motion.div>
       </section>
 
       {/* Contact Content */}
-      <div className="container mx-auto px-4 py-20 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="container mx-auto px-container py-section max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-gap">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25, delay: 0.1 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-8">
+            <h2 className="text-display-sm font-display font-bold text-charcoal mb-8">
               Get In Touch
             </h2>
 
-            <div className="space-y-6 mb-12">
-              <div className="bg-cyan p-6 rounded-3xl">
-                <h3 className="text-xl font-bold text-charcoal mb-2">Email</h3>
+            <div className="space-y-gap mb-12">
+              <div className="bg-cyan p-container rounded-klarna">
+                <h3 className="text-body-lg font-bold text-charcoal mb-2">Email</h3>
                 <a
                   href="mailto:francois@beyers.tech"
-                  className="text-charcoal/80 hover:text-charcoal transition-colors"
+                  className="text-body-md text-charcoal/80 hover:text-charcoal transition-klarna duration-klarna"
                 >
                   francois@beyers.tech
                 </a>
               </div>
 
-              <div className="bg-mint p-6 rounded-3xl">
-                <h3 className="text-xl font-bold text-charcoal mb-2">Location</h3>
-                <p className="text-charcoal/80">Remote · Available Worldwide</p>
+              <div className="bg-mint p-container rounded-klarna">
+                <h3 className="text-body-lg font-bold text-charcoal mb-2">Location</h3>
+                <p className="text-body-md text-charcoal/80">Remote · Available Worldwide</p>
               </div>
 
-              <div className="bg-light-blue p-6 rounded-3xl">
-                <h3 className="text-xl font-bold text-charcoal mb-2">Response Time</h3>
-                <p className="text-charcoal/80">Usually within 24 hours</p>
+              <div className="bg-light-blue p-container rounded-klarna">
+                <h3 className="text-body-lg font-bold text-charcoal mb-2">Response Time</h3>
+                <p className="text-body-md text-charcoal/80">Usually within 24 hours</p>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="bg-white rounded-3xl p-8 shadow-soft">
-              <h3 className="text-xl font-bold text-charcoal mb-6">Connect With Me</h3>
+            <div className="bg-off-white border-2 border-charcoal rounded-klarna p-container">
+              <h3 className="text-body-lg font-bold text-charcoal mb-6">Connect With Me</h3>
               <div className="space-y-4">
                 <a
                   href="https://www.linkedin.com/in/francois-beyers/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-colors"
+                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-klarna duration-klarna font-bold"
                 >
-                  <span className="text-2xl">💼</span>
-                  <span className="font-medium">LinkedIn</span>
+                  <span>LinkedIn</span>
                 </a>
                 <a
                   href="https://github.com/francoisbeyers"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-colors"
+                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-klarna duration-klarna font-bold"
                 >
-                  <span className="text-2xl">💻</span>
-                  <span className="font-medium">GitHub</span>
+                  <span>GitHub</span>
                 </a>
                 <a
                   href="https://twitter.com/BeyersFrancois"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-colors"
+                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-klarna duration-klarna font-bold"
                 >
-                  <span className="text-2xl">🐦</span>
-                  <span className="font-medium">Twitter</span>
+                  <span>Twitter</span>
                 </a>
               </div>
             </div>
@@ -127,28 +124,28 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25, delay: 0.2 }}
           >
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-soft">
-              <h2 className="text-2xl font-bold text-charcoal mb-6">Send a Message</h2>
+            <div className="bg-off-white border-2 border-charcoal rounded-klarna p-container">
+              <h2 className="text-display-sm font-display font-bold text-charcoal mb-8">Send a Message</h2>
 
               {submitStatus === 'success' && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 bg-mint rounded-2xl"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="mb-6 p-4 bg-mint rounded-klarna"
                 >
-                  <p className="text-charcoal font-medium">
-                    ✓ Message sent successfully! I'll get back to you soon.
+                  <p className="text-body-md text-charcoal font-bold">
+                    Message sent successfully! I'll get back to you soon.
                   </p>
                 </motion.div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-charcoal font-medium mb-2">
+                  <label htmlFor="name" className="block text-body-md text-charcoal font-bold mb-2">
                     Name
                   </label>
                   <input
@@ -158,13 +155,13 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-2xl border-2 border-charcoal/10 focus:border-charcoal focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna text-body-md"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-charcoal font-medium mb-2">
+                  <label htmlFor="email" className="block text-body-md text-charcoal font-bold mb-2">
                     Email
                   </label>
                   <input
@@ -174,13 +171,13 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-2xl border-2 border-charcoal/10 focus:border-charcoal focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna text-body-md"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-charcoal font-medium mb-2">
+                  <label htmlFor="subject" className="block text-body-md text-charcoal font-bold mb-2">
                     Subject
                   </label>
                   <input
@@ -190,13 +187,13 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-2xl border-2 border-charcoal/10 focus:border-charcoal focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna text-body-md"
                     placeholder="Project inquiry"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-charcoal font-medium mb-2">
+                  <label htmlFor="message" className="block text-body-md text-charcoal font-bold mb-2">
                     Message
                   </label>
                   <textarea
@@ -206,7 +203,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-2xl border-2 border-charcoal/10 focus:border-charcoal focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna resize-none text-body-md"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -214,7 +211,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-charcoal text-white rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-soft disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="btn-klarna-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

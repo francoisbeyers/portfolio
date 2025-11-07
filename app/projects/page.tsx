@@ -40,7 +40,7 @@ export default function ProjectsPage() {
                 className="group"
               >
                 <Link href={project.link}>
-                  <div className={`${projectColors[index % projectColors.length]} p-container rounded-klarna transition-klarna duration-klarna cursor-pointer h-full flex flex-col`}>
+                  <div className={`${projectColors[index % projectColors.length]} p-container rounded-klarna transition-all duration-klarna cursor-pointer h-full flex flex-col`}>
                     {/* Year Badge */}
                     <div className="text-body-sm font-bold text-charcoal/60 mb-3">
                       {project.year}

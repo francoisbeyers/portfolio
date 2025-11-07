@@ -58,7 +58,7 @@
 @layer utilities {
   /* Klarna button styles */
   .btn-klarna {
-    @apply border-2 border-current rounded-klarna font-bold transition-klarna duration-klarna;
+    @apply border-2 border-current rounded-klarna font-bold transition-all duration-klarna ease-klarna;
     padding: max(15px, 1.481vw) max(23px, 1.7vw);
     font-size: 16px;
     font-family: var(--font-clash), 'Clash Display', sans-serif;

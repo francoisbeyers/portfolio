@@ -73,7 +73,7 @@ export default function ContactPage() {
                 <h3 className="text-body-lg font-bold text-charcoal mb-2">Email</h3>
                 <a
                   href="mailto:francois@beyers.tech"
-                  className="text-body-md text-charcoal/80 hover:text-charcoal transition-klarna duration-klarna"
+                  className="text-body-md text-charcoal/80 hover:text-charcoal transition-all duration-klarna"
                 >
                   francois@beyers.tech
                 </a>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   href="https://www.linkedin.com/in/francois-beyers/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-klarna duration-klarna font-bold"
+                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-all duration-klarna font-bold"
                 >
                   <span>LinkedIn</span>
                 </a>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   href="https://github.com/francoisbeyers"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-klarna duration-klarna font-bold"
+                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-all duration-klarna font-bold"
                 >
                   <span>GitHub</span>
                 </a>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   href="https://twitter.com/BeyersFrancois"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-klarna duration-klarna font-bold"
+                  className="text-body-md flex items-center gap-3 text-charcoal/70 hover:text-charcoal transition-all duration-klarna font-bold"
                 >
                   <span>Twitter</span>
                 </a>
@@ -155,7 +155,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna text-body-md"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-all duration-klarna text-body-md"
                     placeholder="Your name"
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna text-body-md"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-all duration-klarna text-body-md"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna text-body-md"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-all duration-klarna text-body-md"
                     placeholder="Project inquiry"
                   />
                 </div>
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-klarna duration-klarna resize-none text-body-md"
+                    className="w-full px-4 py-3 rounded-klarna border-2 border-charcoal bg-off-white focus:border-charcoal focus:outline-none transition-all duration-klarna resize-none text-body-md"
                     placeholder="Tell me about your project..."
                   />
                 </div>

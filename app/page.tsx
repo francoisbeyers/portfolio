@@ -122,7 +122,7 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, delay: index * 0.05 }}
-                className={`${service.color} p-container rounded-klarna transition-klarna duration-klarna cursor-pointer group`}
+                className={`${service.color} p-container rounded-klarna transition-all duration-klarna cursor-pointer group`}
               >
                 <h3 className="text-display-sm font-display font-bold text-charcoal mb-4">
                   {service.title}
@@ -182,7 +182,7 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, delay: index * 0.05 }}
-                className={`${project.color} p-container rounded-klarna transition-klarna duration-klarna cursor-pointer group`}
+                className={`${project.color} p-container rounded-klarna transition-all duration-klarna cursor-pointer group`}
               >
                 <div className="text-body-sm font-bold text-charcoal/60 mb-3">{project.year}</div>
                 <h3 className="text-display-sm font-display font-bold text-charcoal mb-4">

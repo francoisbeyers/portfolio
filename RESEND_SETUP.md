@@ -43,7 +43,9 @@ By default, emails are sent from `onboarding@resend.dev`. For a more professiona
 1. Restart your development server: `npm run dev`
 2. Go to http://localhost:3000/contact
 3. Fill out and submit the form
-4. Check your inbox at francois@beyers.tech
+4. Check your inbox at francois.beyers@gmail.com (Resend testing mode)
+
+**Note**: In testing mode, Resend only sends emails to the verified account owner's email (francois.beyers@gmail.com). To send to other recipients like francois@beyers.tech, you need to verify a domain in Resend.
 
 ## 6. Deploy to Production
 

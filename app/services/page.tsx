@@ -15,10 +15,10 @@ export default function ServicesPage() {
           className="max-w-4xl mx-auto text-center"
         >
           <h1 className="text-5xl md:text-6xl font-medium text-black mb-8">
-            Services
+            Services <span className="text-rusty-red">•</span>
           </h1>
           <p className="text-lg text-black/60 max-w-2xl mx-auto">
-            From SEO and web development to AI automation and content generation,
+            From <span className="text-rusty-red font-medium">SEO and web development</span> to AI automation and content generation,
             I offer comprehensive digital solutions to help your business thrive online.
           </p>
         </motion.div>

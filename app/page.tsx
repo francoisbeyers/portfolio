@@ -20,8 +20,11 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-7xl font-medium mb-12 text-black"
+            style={{ wordSpacing: '0.25em' }}
           >
-            I craft websites with <i>great attention</i> to details
+            I craft websites with{' '}
+            <span className="text-rusty-red italic">great attention</span>
+            {' '}to details
           </motion.h1>
 
           <motion.p
@@ -41,13 +44,13 @@ export default function Home() {
           >
             <Link
               href="/contact"
-              className="px-6 py-3 border border-black hover:bg-black hover:text-white transition-colors text-sm"
+              className="px-6 py-3 border border-black hover:bg-rusty-red hover:text-white hover:border-rusty-red transition-all duration-500 text-sm"
             >
               Get in Touch
             </Link>
             <Link
               href="/projects"
-              className="px-6 py-3 text-sm hover:opacity-60 transition-opacity"
+              className="px-6 py-3 text-sm hover:text-rusty-red transition-colors duration-500"
             >
               View Projects →
             </Link>
@@ -107,8 +110,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
               >
-                <div className="border border-black/10 p-6 hover:border-black/30 transition-colors h-full">
-                  <h3 className="font-medium text-lg mb-3 text-black">
+                <div className="border border-black/10 p-6 hover:border-rusty-red/50 transition-all duration-500 h-full group">
+                  <h3 className="font-medium text-lg mb-3 text-black group-hover:text-rusty-red transition-colors duration-500">
                     {service.title}
                   </h3>
                   <p className="text-sm text-black/60">
@@ -128,7 +131,7 @@ export default function Home() {
           >
             <Link
               href="/services"
-              className="inline-flex items-center text-sm hover:opacity-60 transition-opacity"
+              className="inline-flex items-center text-sm hover:text-rusty-red transition-colors duration-500"
             >
               View All Services →
             </Link>

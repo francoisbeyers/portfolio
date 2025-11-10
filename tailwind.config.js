@@ -37,6 +37,8 @@ module.exports = {
         'off-white': '#F9F9F9',
         'charcoal': '#000000',
         'text-primary': '#000000',
+        // Accent color
+        'rusty-red': 'rgb(213, 41, 65)',
         // Original colors for compatibility
         orange: "#dc562e",
         "dark-grey": "#101010",

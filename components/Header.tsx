@@ -32,7 +32,7 @@ export default function Header() {
           </Link>
           <Link
             href="/contact"
-            className="text-sm px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors"
+            className="text-sm px-4 py-2 border border-black hover:bg-rusty-red hover:text-white hover:border-rusty-red transition-all duration-500"
           >
             Contact
           </Link>

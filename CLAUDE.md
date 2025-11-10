@@ -93,7 +93,10 @@ Accents: Green/Red for success/error states
 - **Resend API** for contact form email delivery
 - API endpoint: `app/api/contact/route.ts`
 - Environment variable: `RESEND_API_KEY` (stored in `.env.local`)
-- Sends to: `francois@beyers.tech` with reply-to header
+- **Testing mode**: Sends to `francois.beyers@gmail.com` (Resend verified account email)
+  - To send to other recipients, verify a domain in Resend dashboard
+  - Update `to:` field in `app/api/contact/route.ts` after domain verification
+- Reply-to header preserves sender's email for easy replies
 - Free tier: 3,000 emails/month
 - Setup guide: `RESEND_SETUP.md`
 
@@ -126,12 +129,21 @@ Accents: Green/Red for success/error states
 
 ## Common Gotchas
 
-1. **Don't use `generateStaticParams` with `"use client"`** - causes Next.js errors
-2. **Tailwind `@apply` only works with existing classes** - custom utilities must be defined in config
-3. **Service slugs must match** between `data/services.ts` and URL routing
-4. **Mobile viewport**: Test layouts at 375px to ensure proper responsive behavior
-5. **Environment variables**: Server-side only - accessed via `process.env` in API routes/Server Components
-6. **Email testing**: Requires valid `RESEND_API_KEY` in `.env.local` for contact form to work
+1. **app/layout.tsx keeps getting modified** - A linter or formatter may try to add SEO imports (@/lib/metadata, @/lib/schema, @/components/SchemaMarkup, @/components/Header). These files don't exist! The correct layout.tsx should be a "use client" component with inline navigation (no imports). If you see module not found errors, restore from commit `cea121f`.
+
+2. **Resend testing mode limitation** - Resend API can only send to verified account email (francois.beyers@gmail.com) until domain is verified. Sending to any other email will fail with 403 error.
+
+3. **Don't use `generateStaticParams` with `"use client"`** - causes Next.js errors
+
+4. **Tailwind `@apply` only works with existing classes** - custom utilities must be defined in config
+
+5. **Service slugs must match** between `data/services.ts` and URL routing
+
+6. **Mobile viewport**: Test layouts at 375px to ensure proper responsive behavior
+
+7. **Environment variables**: Server-side only - accessed via `process.env` in API routes/Server Components
+
+8. **Dev server cache**: If seeing stale errors, kill all dev servers and restart fresh: `npm run dev`
 
 ## SEO Implementation
 

@@ -5,19 +5,19 @@ import ServicesGrid from '@/components/ServicesGrid';
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-section px-container bg-gradient-to-br from-lavender via-peach to-mint">
+      <section className="py-32 px-6 bg-white">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-          className="container mx-auto max-w-6xl text-center"
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-display-lg font-display font-bold text-charcoal mb-8">
-            Services That Scale
+          <h1 className="text-5xl md:text-6xl font-medium text-black mb-8">
+            Services
           </h1>
-          <p className="text-body-lg text-charcoal/80 max-w-4xl mx-auto">
+          <p className="text-lg text-black/60 max-w-2xl mx-auto">
             From SEO and web development to AI automation and content generation,
             I offer comprehensive digital solutions to help your business thrive online.
           </p>

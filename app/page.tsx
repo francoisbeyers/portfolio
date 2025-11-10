@@ -2,118 +2,103 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import projects from "@/data/projects";
+import { Card, CardHeader, CardBody, CardFooter, Button } from "@heroui/react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-container py-section bg-gradient-to-br from-pink via-lavender to-light-blue">
+      <section className="min-h-[90vh] flex items-center justify-center px-6 py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-          className="text-center max-w-7xl mx-auto"
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-4xl mx-auto"
         >
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.25, delay: 0.1 }}
-            className="text-display-xl font-display font-bold mb-8 text-charcoal"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-medium mb-12 text-black"
           >
-            Francois Beyers
+            I craft websites with <i>great attention</i> to details
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.25, delay: 0.2 }}
-            className="text-display-sm font-display font-bold text-charcoal mb-12"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-black/60 mb-16 max-w-2xl mx-auto"
           >
-            Full-Stack Developer<br/>
-            SEO Expert · AI Automation
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.25, delay: 0.3 }}
-            className="text-body-lg text-charcoal/80 mb-16 max-w-3xl mx-auto"
-          >
-            Crafting digital experiences that blend modern technology with thoughtful design.
-            Let's build something extraordinary together.
+            Full-Stack Developer · SEO Expert · AI Automation Specialist
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.25, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
               href="/contact"
-              className="btn-klarna-primary"
+              className="px-6 py-3 border border-black hover:bg-black hover:text-white transition-colors text-sm"
             >
               Get in Touch
             </Link>
             <Link
               href="/projects"
-              className="btn-klarna-secondary bg-off-white"
+              className="px-6 py-3 text-sm hover:opacity-60 transition-opacity"
             >
-              View Projects
+              View Projects →
             </Link>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Services Section */}
-      <section className="py-section px-container bg-off-white">
-        <div className="container mx-auto max-w-7xl">
+      <section className="py-32 px-6 bg-white border-t border-black/10">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.25 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="mb-20"
           >
-            <h2 className="text-display-md font-display font-bold text-charcoal mb-6">
-              What I Do
+            <h2 className="text-3xl md:text-4xl font-medium text-black mb-4">
+              Services
             </h2>
-            <p className="text-body-lg text-charcoal/70 max-w-2xl mx-auto">
+            <p className="text-lg text-black/60 max-w-2xl">
               Specialized services to elevate your digital presence
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "SEO & Digital Marketing",
                 desc: "Data-driven strategies to boost your rankings and drive organic traffic",
-                color: "bg-pink",
               },
               {
                 title: "WordPress Development",
                 desc: "Custom themes and plugins that make your site stand out",
-                color: "bg-cyan",
               },
               {
                 title: "AI Content Generation",
                 desc: "Scale your content creation while maintaining your brand voice",
-                color: "bg-yellow",
               },
               {
                 title: "AI Automation",
                 desc: "Intelligent workflows that save time and increase efficiency",
-                color: "bg-lavender",
               },
               {
                 title: "Web Development",
                 desc: "Modern, fast, and scalable applications built with latest tech",
-                color: "bg-peach",
               },
               {
                 title: "Consulting & Training",
                 desc: "Expert guidance and team training for technical excellence",
-                color: "bg-mint",
               },
             ].map((service, index) => (
               <motion.div
@@ -121,76 +106,15 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: index * 0.05 }}
-                className={`${service.color} p-container rounded-klarna transition-all duration-klarna cursor-pointer group overflow-hidden`}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
               >
-                <h3 className="font-display font-bold text-charcoal mb-4 break-words" style={{ fontSize: 'clamp(20px, 2.5vw, 36px)', lineHeight: '1.15' }}>
-                  {service.title}
-                </h3>
-                <p className="text-body-md text-charcoal/80">
-                  {service.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.25, delay: 0.3 }}
-            className="text-center mt-16"
-          >
-            <Link
-              href="/services"
-              className="btn-klarna-primary inline-block"
-            >
-              View All Services
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section className="py-section px-container bg-off-white">
-        <div className="container mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.25 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-display-md font-display font-bold text-charcoal mb-6">
-              Featured Work
-            </h2>
-            <p className="text-body-lg text-charcoal/70 max-w-2xl mx-auto">
-              Recent projects that showcase my expertise
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gap">
-            {[
-              { title: "Câr Y Môr", type: "Design · Development · SEO", year: 2022, color: "bg-light-blue" },
-              { title: "BMT Connect", type: "Full-Stack Development", year: 2021, color: "bg-peach" },
-              { title: "Rasa Festival", type: "Design · Development · SEO", year: 2020, color: "bg-mint" },
-              { title: "Baker Charles", type: "Design", year: 2020, color: "bg-lavender" },
-            ].map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: index * 0.05 }}
-                className={`${project.color} p-container rounded-klarna transition-all duration-klarna cursor-pointer group`}
-              >
-                <div className="text-body-sm font-bold text-charcoal/60 mb-3">{project.year}</div>
-                <h3 className="text-display-sm font-display font-bold text-charcoal mb-4">
-                  {project.title}
-                </h3>
-                <p className="text-body-md text-charcoal/80 mb-8">{project.type}</p>
-                <div className="btn-klarna-primary inline-block">
-                  View Case Study
+                <div className="border border-black/10 p-6 hover:border-black/30 transition-colors h-full">
+                  <h3 className="font-medium text-lg mb-3 text-black">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-black/60">
+                    {service.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -200,37 +124,104 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.25, delay: 0.2 }}
-            className="text-center mt-16"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12"
+          >
+            <Link
+              href="/services"
+              className="inline-flex items-center text-sm hover:opacity-60 transition-opacity"
+            >
+              View All Services →
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-32 px-6 bg-white border-t border-black/10">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-20"
+          >
+            <h2 className="text-3xl md:text-4xl font-medium text-black mb-4">
+              Projects
+            </h2>
+            <p className="text-lg text-black/60 max-w-2xl">
+              Recent projects that showcase my expertise
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {projects.slice(0, 4).map((project, index) => {
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Link href={project.link} className="group block">
+                    <div className="aspect-[4/3] bg-black/5 mb-4 overflow-hidden">
+                      {/* Placeholder for project image */}
+                      <div className="w-full h-full flex items-center justify-center text-black/20 group-hover:text-black/40 transition-colors">
+                        <span className="text-6xl">{project.title.charAt(0).toUpperCase()}</span>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-baseline gap-3">
+                        <h3 className="font-medium text-xl text-black group-hover:opacity-60 transition-opacity">
+                          {project.title}
+                        </h3>
+                        <span className="text-sm text-black/40">{project.year}</span>
+                      </div>
+                      <p className="text-sm text-black/60">{project.type}</p>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-12"
           >
             <Link
               href="/projects"
-              className="btn-klarna-primary inline-block"
+              className="inline-flex items-center text-sm hover:opacity-60 transition-opacity"
             >
-              View All Projects
+              View All Projects →
             </Link>
           </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-section px-container bg-gradient-to-br from-pink via-yellow to-cyan">
+      <section className="py-32 px-6 bg-white border-t border-black/10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.25 }}
-          className="container mx-auto max-w-5xl text-center"
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-display-md font-display font-bold text-charcoal mb-8">
+          <h2 className="text-4xl md:text-5xl font-medium text-black mb-8">
             Let's Work Together
           </h2>
-          <p className="text-body-lg text-charcoal/80 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-black/60 mb-12 max-w-2xl mx-auto">
             Ready to bring your project to life? Let's chat about how I can help.
           </p>
           <Link
             href="/contact"
-            className="btn-klarna-primary inline-block"
+            className="inline-block px-8 py-4 border border-black hover:bg-black hover:text-white transition-colors text-sm"
           >
             Start a Project
           </Link>

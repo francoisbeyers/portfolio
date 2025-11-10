@@ -3,90 +3,68 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import projects from '@/data/projects';
+import { Card, CardHeader, CardBody, CardFooter, Button, Chip } from '@heroui/react';
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-section px-container bg-gradient-to-br from-cyan via-light-blue to-mint">
+      <section className="py-32 px-6 bg-white">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-          className="container mx-auto max-w-6xl text-center"
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-display-lg font-display font-bold text-charcoal mb-8">
-            Featured Projects
+          <h1 className="text-5xl md:text-6xl font-medium text-black mb-8">
+            Projects
           </h1>
-          <p className="text-body-lg text-charcoal/80 max-w-4xl mx-auto">
+          <p className="text-lg text-black/60 max-w-2xl mx-auto">
             Real-world solutions that combine design, development, and strategy
           </p>
         </motion.div>
       </section>
 
-      <div className="container mx-auto px-container py-section max-w-7xl">
+      <div className="max-w-6xl mx-auto px-6 pb-32">
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-gap mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           {projects.map((project, index) => {
-            const projectColors = ['bg-light-blue', 'bg-peach', 'bg-mint', 'bg-lavender', 'bg-pink', 'bg-yellow'];
             return (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: index * 0.05 }}
-                className="group"
+                transition={{ duration: 0.6, delay: index * 0.05 }}
               >
-                <Link href={project.link}>
-                  <div className={`${projectColors[index % projectColors.length]} p-container rounded-klarna transition-all duration-klarna cursor-pointer h-full flex flex-col overflow-hidden`}>
-                    {/* Year Badge */}
-                    <div className="text-body-sm font-bold text-charcoal/60 mb-3">
-                      {project.year}
+                <Link href={project.link} className="group block">
+                  <div className="aspect-[4/3] bg-black/5 mb-4 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center text-black/20 group-hover:text-black/40 transition-colors">
+                      <span className="text-6xl">{project.title.charAt(0).toUpperCase()}</span>
                     </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-baseline gap-3">
+                      <h2 className="font-medium text-xl text-black group-hover:opacity-60 transition-opacity">
+                        {project.title}
+                      </h2>
+                      <span className="text-sm text-black/40">{project.year}</span>
+                    </div>
+                    <p className="text-sm text-black/60">{project.type}</p>
 
-                    {/* Title */}
-                    <h2 className="font-display font-bold text-charcoal mb-4 break-words" style={{ fontSize: 'clamp(22px, 2.8vw, 42px)', lineHeight: '1.15' }}>
-                      {project.title}
-                    </h2>
-
-                    {/* Type */}
-                    <p className="text-body-md text-charcoal/70 mb-6">
-                      {project.type}
-                    </p>
-
-                    {/* Tags */}
                     {project.tags && (
-                      <div className="flex flex-wrap gap-2 mb-8">
+                      <div className="flex flex-wrap gap-2 pt-2">
                         {project.tags.map((tag, i) => (
                           <span
                             key={i}
-                            className="bg-charcoal/10 text-charcoal px-4 py-2 rounded-klarna text-body-sm font-bold"
+                            className="text-xs text-black/40 px-2 py-1 border border-black/10"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
                     )}
-
-                    {/* CTA */}
-                    <div className="flex flex-wrap gap-3 mt-auto">
-                      <div className="btn-klarna-primary">
-                        View Case Study
-                      </div>
-                      {project.url && (
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="btn-klarna-secondary bg-off-white"
-                        >
-                          Live Site
-                        </a>
-                      )}
-                    </div>
                   </div>
                 </Link>
               </motion.div>
@@ -94,61 +72,32 @@ export default function ProjectsPage() {
           })}
         </div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.25, delay: 0.2 }}
-          className="bg-off-white border-2 border-charcoal rounded-klarna p-container text-center mb-16"
-        >
-          <h3 className="text-display-sm font-display font-bold text-charcoal mb-12">
-            Project Impact
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gap">
-            <div>
-              <div className="text-display-md font-display font-bold text-charcoal mb-2">{projects.length}</div>
-              <div className="text-body-md text-charcoal/70">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-display-md font-display font-bold text-charcoal mb-2">
-                {new Date().getFullYear() - 2020}+
-              </div>
-              <div className="text-body-md text-charcoal/70">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-display-md font-display font-bold text-charcoal mb-2">100%</div>
-              <div className="text-body-md text-charcoal/70">Client Satisfaction</div>
-            </div>
-          </div>
-        </motion.div>
-
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.25, delay: 0.3 }}
-          className="text-center bg-gradient-to-br from-pink via-yellow to-cyan p-container rounded-klarna"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="border-t border-black/10 pt-20 text-center"
         >
-          <h3 className="text-display-sm font-display font-bold text-charcoal mb-8">
+          <h3 className="text-3xl md:text-4xl font-medium text-black mb-6">
             Want to See Your Project Here?
           </h3>
-          <p className="text-body-lg text-charcoal/80 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-black/60 mb-12 max-w-2xl mx-auto">
             Let's build something awesome together!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="btn-klarna-primary"
+              className="px-6 py-3 border border-black hover:bg-black hover:text-white transition-colors text-sm"
             >
               Get In Touch
             </Link>
             <Link
               href="/services"
-              className="btn-klarna-secondary bg-off-white"
+              className="px-6 py-3 text-sm hover:opacity-60 transition-opacity"
             >
-              View Services
+              View Services →
             </Link>
           </div>
         </motion.div>

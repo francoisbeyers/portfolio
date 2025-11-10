@@ -6,7 +6,7 @@ import { Project } from '@/types';
 import { useState } from 'react';
 
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <div className="max-w-6xl mx-auto px-6 pb-32">

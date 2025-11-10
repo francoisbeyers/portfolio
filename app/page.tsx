@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import projects from "@/data/projects";
-import { Card, CardHeader, CardBody, CardFooter, Button } from "@heroui/react";
 
 export default function Home() {
   return (

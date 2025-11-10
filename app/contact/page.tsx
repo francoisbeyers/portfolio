@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Input, Textarea, Button, Card, CardBody } from '@heroui/react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

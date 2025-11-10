@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { services } from '@/data/services';
-import { Card, CardHeader, CardBody, CardFooter, Button, Chip } from '@heroui/react';
 
 const ServicesGrid = () => {
   return (

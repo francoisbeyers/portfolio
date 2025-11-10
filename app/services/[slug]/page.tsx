@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import { getServiceBySlug, services } from '@/data/services';
 import { getProjectsByService } from '@/data/projects';
 import { notFound } from 'next/navigation';
-import { Card, CardBody, CardHeader, Button, Chip } from '@heroui/react';
 
 export default function ServicePage({
   params,
@@ -44,15 +43,13 @@ export default function ServicePage({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Button
-              as={Link}
+            <Link
               href="/services"
-              variant="light"
-              startContent={<span>←</span>}
-              className="mb-6"
+              className="inline-flex items-center gap-2 mb-6 text-sm hover:opacity-60 transition-opacity"
             >
+              <span>←</span>
               Back to Services
-            </Button>
+            </Link>
 
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
               <span className="text-6xl md:text-8xl">{service.icon}</span>
@@ -90,24 +87,22 @@ export default function ServicePage({
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-8">
                 What's Included
               </h2>
-              <Card>
-                <CardBody className="p-8">
-                  <ul className="space-y-4">
-                    {service.features.map((feature, index) => (
-                      <motion.li
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
-                        className="flex items-start gap-3"
-                      >
-                        <span className="text-2xl text-charcoal">✓</span>
-                        <span className="text-lg text-charcoal/80">{feature}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </CardBody>
-              </Card>
+              <div className="border border-black/10 p-8">
+                <ul className="space-y-4">
+                  {service.features.map((feature, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+                      className="flex items-start gap-3"
+                    >
+                      <span className="text-2xl text-black">✓</span>
+                      <span className="text-lg text-black/80">{feature}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </section>
 
             {/* Related Projects */}
@@ -120,26 +115,19 @@ export default function ServicePage({
                   {relatedProjects.map((project, idx) => {
                     const projectColors = ['bg-light-blue', 'bg-peach', 'bg-mint', 'bg-lavender'];
                     return (
-                      <Card
+                      <Link
                         key={project.id}
-                        isPressable
-                        as={Link}
                         href={project.link}
-                        className="hover:scale-[1.02] transition-transform"
-                        classNames={{
-                          base: projectColors[idx % projectColors.length],
-                        }}
+                        className="block border border-black/10 p-6 hover:border-black/30 transition-colors"
                       >
-                        <CardBody className="p-6">
-                          <h3 className="text-2xl font-bold text-charcoal mb-2">
-                            {project.title}
-                          </h3>
-                          <p className="text-charcoal/70 text-lg">{project.type}</p>
-                          <Chip size="sm" className="mt-2" variant="flat">
-                            {project.year}
-                          </Chip>
-                        </CardBody>
-                      </Card>
+                        <h3 className="text-2xl font-bold text-black mb-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-black/70 text-lg">{project.type}</p>
+                        <span className="text-xs text-black/40 mt-2 inline-block px-2 py-1 border border-black/10">
+                          {project.year}
+                        </span>
+                      </Link>
                     );
                   })}
                 </div>
@@ -174,19 +162,17 @@ export default function ServicePage({
                     desc: "We'll launch your project and I'll provide ongoing support to ensure success."
                   }
                 ].map((item) => (
-                  <Card key={item.step}>
-                    <CardBody className="flex flex-row gap-6 p-6">
-                      <div className="flex-shrink-0 w-14 h-14 rounded-full bg-charcoal text-white flex items-center justify-center font-bold text-xl">
-                        {item.step}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-charcoal mb-2">{item.title}</h3>
-                        <p className="text-charcoal/70 leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </CardBody>
-                  </Card>
+                  <div key={item.step} className="border border-black/10 p-6 flex gap-6">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-full bg-black text-white flex items-center justify-center font-bold text-xl">
+                      {item.step}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-black mb-2">{item.title}</h3>
+                      <p className="text-black/70 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </section>
@@ -200,67 +186,57 @@ export default function ServicePage({
             className="lg:col-span-1"
           >
             {/* CTA Card */}
-            <Card className="sticky top-24">
-              <CardBody className="p-8 gap-4">
-                <h3 className="text-2xl font-bold text-charcoal">Ready to Get Started?</h3>
-                <p className="text-charcoal/70 leading-relaxed">
-                  Let's discuss how I can help with your {service.title.toLowerCase()} needs.
-                </p>
-                <Button
-                  as={Link}
-                  href={service.cta.link}
-                  color="primary"
-                  size="lg"
-                  radius="full"
-                  className="w-full"
-                >
-                  {service.cta.text}
-                </Button>
-                <Button
-                  as={Link}
-                  href="/contact"
-                  variant="bordered"
-                  size="lg"
-                  radius="full"
-                  className="w-full"
-                >
-                  Schedule a Call
-                </Button>
+            <div className="sticky top-24 border border-black/10 p-8">
+              <h3 className="text-2xl font-bold text-black mb-4">Ready to Get Started?</h3>
+              <p className="text-black/70 leading-relaxed mb-6">
+                Let's discuss how I can help with your {service.title.toLowerCase()} needs.
+              </p>
+              <Link
+                href={service.cta.link}
+                className="block w-full text-center px-6 py-3 bg-black text-white hover:bg-white hover:text-black border border-black transition-colors mb-3"
+              >
+                {service.cta.text}
+              </Link>
+              <Link
+                href="/contact"
+                className="block w-full text-center px-6 py-3 border border-black hover:bg-black hover:text-white transition-colors"
+              >
+                Schedule a Call
+              </Link>
 
-                {/* Pricing */}
-                {service.pricing && (
-                  <div className="mt-4 pt-8 border-t border-charcoal/10">
-                    <Chip size="sm" variant="flat" className="mb-2">
-                      {service.pricing.type}
-                    </Chip>
-                    <p className="text-3xl font-bold text-charcoal">
-                      {service.pricing.starting}
-                    </p>
-                  </div>
-                )}
-
-                {/* Other Services */}
-                <div className="mt-4 pt-8 border-t border-charcoal/10">
-                  <h4 className="text-lg font-bold text-charcoal mb-4">Other Services</h4>
-                  <ul className="space-y-3">
-                    {services
-                      .filter((s) => s.id !== service.id)
-                      .slice(0, 3)
-                      .map((s) => (
-                        <li key={s.id}>
-                          <Link
-                            href={`/services/${s.slug}`}
-                            className="text-charcoal/70 hover:text-charcoal transition-colors flex items-center gap-2"
-                          >
-                            <span>{s.icon}</span>
-                            <span>{s.title}</span>
-                          </Link>
-                        </li>
-                      ))}
-                  </ul>
+              {/* Pricing */}
+              {service.pricing && (
+                <div className="mt-8 pt-8 border-t border-black/10">
+                  <p className="text-xs text-black/40 uppercase tracking-wider mb-2">
+                    {service.pricing.type}
+                  </p>
+                  <p className="text-3xl font-bold text-black">
+                    {service.pricing.starting}
+                  </p>
                 </div>
-              </CardBody>
-            </Card>
+              )}
+
+              {/* Other Services */}
+              <div className="mt-8 pt-8 border-t border-black/10">
+                <h4 className="text-lg font-bold text-black mb-4">Other Services</h4>
+                <ul className="space-y-3">
+                  {services
+                    .filter((s) => s.id !== service.id)
+                    .slice(0, 3)
+                    .map((s) => (
+                      <li key={s.id}>
+                        <Link
+                          href={`/services/${s.slug}`}
+                          className="text-black/70 hover:text-black transition-colors flex items-center gap-2 text-sm"
+                        >
+                          <span>{s.icon}</span>
+                          <span>{s.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div>
           </motion.aside>
         </div>
       </div>

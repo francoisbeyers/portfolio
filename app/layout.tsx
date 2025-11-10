@@ -3,8 +3,6 @@ import "../styles/globals.css";
 import localFont from "next/font/local";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HeroUIProvider } from "@heroui/react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@heroui/react";
 
 const clash = localFont({
   src: "../public/ClashDisplay-Bold.woff2",
@@ -26,7 +24,6 @@ export default function RootLayout({
         <meta name="description" content="Full-stack developer, SEO expert, and AI automation specialist. Building modern solutions with clean design." />
       </head>
       <body className="bg-white text-black">
-        <HeroUIProvider>
         {/* Minimal Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-black/10">
           <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
@@ -105,7 +102,6 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
-        </HeroUIProvider>
       </body>
     </html>
   );

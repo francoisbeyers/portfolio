@@ -17,16 +17,41 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      setSubmitStatus('success');
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Reset success message after 5 seconds
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        console.error('Form submission error:', data.error);
+
+        // Reset error message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setSubmitStatus('error');
+
+      // Reset error message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    }, 1000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -135,10 +160,22 @@ export default function ContactPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="mb-8 p-4 border border-black/10 bg-black/5"
+                className="mb-8 p-4 border border-green-500/20 bg-green-50"
               >
-                <p className="text-sm text-black/80">
-                  Message sent successfully! I'll get back to you soon.
+                <p className="text-sm text-green-800">
+                  ✓ Message sent successfully! I'll get back to you soon.
+                </p>
+              </motion.div>
+            )}
+
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mb-8 p-4 border border-red-500/20 bg-red-50"
+              >
+                <p className="text-sm text-red-800">
+                  ✗ Failed to send message. Please try again or email me directly at francois@beyers.tech
                 </p>
               </motion.div>
             )}

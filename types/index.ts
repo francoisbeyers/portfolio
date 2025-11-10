@@ -26,6 +26,17 @@ export interface Service {
     text: string;
     link: string;
   };
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+  reviews?: Array<{
+    author: string;
+    company: string;
+    rating: number;
+    text: string;
+    image?: string;
+  }>;
 }
 
 export interface BlogPost {
@@ -36,6 +47,7 @@ export interface BlogPost {
   content: string;
   author: string;
   publishedAt: string;
+  updatedAt?: string;
   category: string;
   tags: string[];
   coverImage?: string;

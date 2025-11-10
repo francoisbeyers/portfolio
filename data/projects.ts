@@ -8,6 +8,8 @@ const projects: Project[] = [
     year: 2022,
     link: "/projects/car-y-mor",
     url: "https://www.carymor.wales/",
+    description: "A website for a community-owned seaweed farm in Pembrokeshire, Wales.",
+    image: "/cym_mac_mockup.png",
     tags: ['Design', 'Development', 'SEO'],
     services: ['seo', 'web-development']
   },
@@ -18,6 +20,8 @@ const projects: Project[] = [
     year: 2021,
     link: "/projects/bmt-connect",
     url: "",
+    description: "A full-stack web application for connecting people.",
+    image: "/bmt_iphone_mockup.png",
     tags: ['Full-stack', 'Development'],
     services: ['web-development']
   },
@@ -28,6 +32,8 @@ const projects: Project[] = [
     year: 2020,
     link: "/projects/rasa-festival",
     url: "https://rasafestival.org/",
+    description: "A website for a non-profit arts festival celebrating South Asian arts and culture.",
+    image: "/rasa_mac_mockup.png",
     tags: ['Design', 'Development', 'SEO', 'Non-profit'],
     services: ['seo', 'web-development']
   },
@@ -38,6 +44,8 @@ const projects: Project[] = [
     year: 2020,
     link: "/projects/baker-charles",
     url: "https://www.bakercharles.com/",
+    description: "A sleek and professional website for a recruitment agency.",
+    image: "/bc_mac_mockup.png",
     tags: ['Design'],
     services: ['web-development']
   },
@@ -57,4 +65,8 @@ export const getProjectsByTag = (tag: string): Project[] => {
   return projects.filter(project =>
     project.tags?.includes(tag)
   );
+};
+
+export const getProjectBySlug = (slug: string): Project | undefined => {
+  return projects.find(project => project.link === `/projects/${slug}`);
 };

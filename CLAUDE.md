@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **portfolio website** for Francois Beyers, built with Next.js 16 (App Router), React 19, and TypeScript. The site showcases services (SEO, WordPress development, AI automation), projects, and contact information. The design follows **Klarna's aesthetic** with bold typography, flat design, pastel colors, and fluid responsive sizing.
+This is a **portfolio website** for Francois Beyers, built with Next.js 16 (App Router), React 19, and TypeScript. The site showcases services (SEO, WordPress development, AI automation), projects, and contact information. The design follows a **minimalist aesthetic** inspired by modern portfolio sites, with clean typography, monochromatic color scheme, and generous whitespace.
 
 ## Development Commands
 
@@ -46,47 +46,56 @@ app/
 
 Services and projects are **statically defined** in TypeScript files, not database-driven. Service pages use dynamic routing with `getServiceBySlug()` helper.
 
-### Design System (Klarna-Inspired)
+### Design System (Minimalist)
 
 #### Typography
-- **Display sizes**: `text-display-xl` (46-120px), `text-display-lg` (40-100px), `text-display-md` (32-80px), `text-display-sm` (25-60px)
-- **Body sizes**: `text-body-lg` (18-24px), `text-body-md` (16-20px), `text-body-sm` (14px)
-- **Font**: Clash Display (bold, loaded via localFont from `public/ClashDisplay-Bold.woff2`)
-- **Line-height**: 1 for headings (tight), 1.3 for body
-- **Letter-spacing**: -0.03em for headings, -0.02em for body
+- **Font**: Clash Display (medium weight, loaded via localFont from `public/ClashDisplay-Bold.woff2`)
+- **Sizes**: Large headings (5xl-7xl), medium text (xl-2xl), body (sm-base)
+- **Approach**: Clean hierarchy, generous spacing, italic emphasis for key phrases
 
-#### Colors (Exact Klarna Palette)
+#### Colors (Monochromatic)
 ```
-Pink: #FFB3C7, Cyan: #99F8FF, Yellow: #FFF999
-Lavender: #F0E3FF, Peach: #FFE6CC, Mint: #9EFFBB
-Light Blue: #D1E2FF, Off-White: #F9F9F9, Charcoal: #000000
+Primary: #000000 (black)
+Background: #FFFFFF (white)
+Text: black with opacity (black/60, black/40, black/20 for hierarchy)
+Borders: black/10 for subtle dividers
+Accents: Green/Red for success/error states
 ```
 
 #### Spacing System
-- `p-container`: `max(20px, 2.222vw)` - card/section padding
-- `py-section`: `max(70px, 6.370vw)` - vertical section spacing
-- `gap-gap`: `max(30px, 2.593vw)` - grid/flex gaps
+- Sections: `py-32` (128px vertical padding)
+- Containers: `px-6` with `max-w-6xl` center alignment
+- Grids: `gap-6` to `gap-12` depending on content density
 
 #### Components
-- `rounded-klarna`: 50px border radius
-- Flat design with **no shadows** (box-shadow: none)
-- Buttons: `.btn-klarna-primary` (black bg) and `.btn-klarna-secondary` (transparent with border)
-- Transitions: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+- **No component library** - Pure Tailwind CSS with native HTML elements
+- Simple borders: `border border-black/10`
+- Hover effects: opacity changes (`hover:opacity-60`) and border darkening
+- Transitions: 0.6s duration for refined, slower animations
+- No box shadows - completely flat design
 
 ### Critical Design Rules
 
-1. **Card titles must use fluid font sizing** to prevent overflow:
-   ```tsx
-   // Service/Project cards
-   style={{ fontSize: 'clamp(20px, 2.5vw, 36px)', lineHeight: '1.15' }}
-   ```
-   Do NOT use `text-display-sm` in cards - it causes text to overflow on smaller screens.
+1. **Pure Tailwind CSS only** - No component libraries. Use native HTML elements styled with Tailwind utilities.
 
-2. **Always add `overflow-hidden` and `break-words`** to card containers to prevent text breaking out.
+2. **Minimalist hover effects**: Use `hover:opacity-60` for text links and `hover:border-black/30` for cards. Avoid scale transforms except for subtle effects.
 
-3. **Tailwind custom classes**: Only use `transition-all`, not `transition-klarna` (which doesn't exist). Use `duration-klarna` and `ease-klarna` for timing.
+3. **Typography emphasis**: Use `<i>` tags for italic emphasis on key phrases (e.g., "great attention to details").
 
-4. **Framer Motion**: Used for page animations with `initial={{ opacity: 0 }}`, `animate={{ opacity: 1 }}`, duration 0.25s (fast, Klarna-style).
+4. **Consistent spacing**: Always use `py-32` for section vertical padding and `px-6` for horizontal padding. Use `max-w-6xl mx-auto` for content containers.
+
+5. **Border style**: All borders should be `border-black/10` for subtle definition. Cards should use `border border-black/10 p-8`.
+
+6. **Framer Motion**: Used for page animations with `initial={{ opacity: 0 }}`, `animate={{ opacity: 1 }}`, duration 0.6s (slower, more refined).
+
+### Email Integration
+
+- **Resend API** for contact form email delivery
+- API endpoint: `app/api/contact/route.ts`
+- Environment variable: `RESEND_API_KEY` (stored in `.env.local`)
+- Sends to: `francois@beyers.tech` with reply-to header
+- Free tier: 3,000 emails/month
+- Setup guide: `RESEND_SETUP.md`
 
 ### Testing
 
@@ -99,12 +108,16 @@ Light Blue: #D1E2FF, Off-White: #F9F9F9, Charcoal: #000000
 - Hosted on **Vercel**
 - Sitemap auto-generated post-build via `next-sitemap`
 - Configuration in `next-sitemap.config.js`
+- **Important**: Add `RESEND_API_KEY` environment variable in Vercel for production email functionality
 
 ## Key Implementation Notes
 
 - **Next.js 16 App Router**: All pages are Server Components by default, use `"use client"` for interactivity
 - **Dynamic routes**: Service pages use `use(params)` to unwrap promises in Next.js 16
 - **Font loading**: Clash Display loaded via `next/font/local` in `app/layout.tsx`
+- **No component library**: Pure Tailwind CSS - all components are native HTML elements
+- **API Routes**: Contact form uses `/app/api/contact/route.ts` for email sending
+- **Environment variables**: Store secrets in `.env.local` (gitignored)
 - **Git workflow**: Always create descriptive commits with Claude Code signature:
   ```
   🤖 Generated with [Claude Code](https://claude.com/claude-code)
@@ -116,4 +129,21 @@ Light Blue: #D1E2FF, Off-White: #F9F9F9, Charcoal: #000000
 1. **Don't use `generateStaticParams` with `"use client"`** - causes Next.js errors
 2. **Tailwind `@apply` only works with existing classes** - custom utilities must be defined in config
 3. **Service slugs must match** between `data/services.ts` and URL routing
-4. **Mobile viewport**: Test card layouts at 375px to ensure text doesn't overflow
+4. **Mobile viewport**: Test layouts at 375px to ensure proper responsive behavior
+5. **Environment variables**: Server-side only - accessed via `process.env` in API routes/Server Components
+6. **Email testing**: Requires valid `RESEND_API_KEY` in `.env.local` for contact form to work
+
+## SEO Implementation
+
+Comprehensive SEO documentation available in project root:
+- **START_HERE.md** - Navigation guide for all SEO docs
+- **SEO_QUICK_START.md** - Quick reference and implementation timeline
+- **SEO_IMPLEMENTATION_GUIDE.md** - Code-ready templates for schema markup, meta tags, etc.
+- **SEO_ANALYSIS.md** - Full site audit with recommendations
+- **SEO_CHECKLIST.md** - Step-by-step implementation tracking
+
+Priority Phase 1 items (4-6 hours):
+- Add schema markup (Organization, Service, FAQ)
+- Implement dynamic meta tags per page
+- Add FAQ sections to service pages
+- Create robots.txt and improve sitemap

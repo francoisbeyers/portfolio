@@ -53,13 +53,12 @@ export default function ServiceDetail({ service, relatedProjects }: ServiceDetai
 
   return (
     <div className="min-h-screen bg-off-white">
-      <head>
-        <SchemaMarkup schema={generateServiceSchema(service)} />
-        <SchemaMarkup schema={generateBreadcrumbSchema(breadcrumbsForSchema)} />
-        <SchemaMarkup schema={generateHowToSchema(`How to Get Started with ${service.title}`, howToSteps)} />
-        {service.faqs && <SchemaMarkup schema={generateFAQSchema(service.faqs)} />}
-        {aggregateRatingSchema && <SchemaMarkup schema={aggregateRatingSchema} />}
-      </head>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={generateServiceSchema(service)} />
+      <SchemaMarkup schema={generateBreadcrumbSchema(breadcrumbsForSchema)} />
+      <SchemaMarkup schema={generateHowToSchema(`How to Get Started with ${service.title}`, howToSteps)} />
+      {service.faqs && <SchemaMarkup schema={generateFAQSchema(service.faqs)} />}
+      {aggregateRatingSchema && <SchemaMarkup schema={aggregateRatingSchema} />}
 
       {/* Hero Section */}
       <section className={`py-20 px-4 bg-gradient-to-br ${gradientClass}`}>

@@ -48,9 +48,9 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
 
   return (
     <div className="min-h-screen bg-off-white">
-      <head>
-        <SchemaMarkup schema={generateCreativeWorkSchema(project)} />
-      </head>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={generateCreativeWorkSchema(project)} />
+
       <div className="container mx-auto max-w-4xl px-4 py-16">
         <Breadcrumbs items={breadcrumbItems} />
         <h1 className="text-4xl md:text-6xl font-bold text-charcoal mb-4">{project.title}</h1>

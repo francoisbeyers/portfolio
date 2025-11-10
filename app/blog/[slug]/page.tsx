@@ -53,16 +53,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="min-h-screen bg-white">
-      <head>
-        <SchemaMarkup schema={generateBlogPostingSchema({
-          title: post.title,
-          description: post.excerpt,
-          image: post.coverImage,
-          publishedAt: post.publishedAt,
-          updatedAt: post.updatedAt,
-          author: post.author,
-        })} />
-      </head>
+      {/* Schema Markup */}
+      <SchemaMarkup schema={generateBlogPostingSchema({
+        title: post.title,
+        description: post.excerpt,
+        image: post.coverImage,
+        publishedAt: post.publishedAt,
+        updatedAt: post.updatedAt,
+        author: post.author,
+      })} />
+
       <div className="container mx-auto max-w-3xl px-4 py-16">
         <Breadcrumbs items={breadcrumbItems} />
         

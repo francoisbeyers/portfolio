@@ -53,13 +53,15 @@ Services and projects are **statically defined** in TypeScript files, not databa
 - **Sizes**: Large headings (5xl-7xl), medium text (xl-2xl), body (sm-base)
 - **Approach**: Clean hierarchy, generous spacing, italic emphasis for key phrases
 
-#### Colors (Monochromatic)
+#### Colors (Minimalist with Accent)
 ```
 Primary: #000000 (black)
 Background: #FFFFFF (white)
 Text: black with opacity (black/60, black/40, black/20 for hierarchy)
 Borders: black/10 for subtle dividers
-Accents: Green/Red for success/error states
+Accent: Rusty Red rgb(213, 41, 65) - defined as 'rusty-red' in tailwind.config.js
+  - Used for hover states, active navigation, emphasized text
+  - Provides bold contrast while maintaining minimalist aesthetic
 ```
 
 #### Spacing System
@@ -70,29 +72,65 @@ Accents: Green/Red for success/error states
 #### Components
 - **No component library** - Pure Tailwind CSS with native HTML elements
 - Simple borders: `border border-black/10`
-- Hover effects: opacity changes (`hover:opacity-60`) and border darkening
-- Transitions: 0.6s duration for refined, slower animations
+- Hover effects:
+  - Text links: opacity changes (`hover:opacity-60`) or Rusty Red color
+  - Cards: border changes to `hover:border-rusty-red`
+  - Buttons: `hover:bg-rusty-red hover:text-white`
+  - Project cards: scrolling text animation with Framer Motion
+  - Service cards: color transitions and decorative corner accents
+- Transitions: 0.6s duration for refined, slower animations (0.3-0.5s for interactions)
 - No box shadows - completely flat design
 
 ### Critical Design Rules
 
 1. **Pure Tailwind CSS only** - No component libraries. Use native HTML elements styled with Tailwind utilities.
 
-2. **Minimalist hover effects**: Use `hover:opacity-60` for text links and `hover:border-black/30` for cards. Avoid scale transforms except for subtle effects.
+2. **Rusty Red accent usage**: Use `text-rusty-red`, `bg-rusty-red`, `border-rusty-red` for:
+   - Active/current navigation items
+   - Hover states on interactive elements
+   - Emphasized text (via `<span>` with appropriate classes)
+   - Call-to-action buttons on hover
 
-3. **Typography emphasis**: Use `<i>` tags for italic emphasis on key phrases (e.g., "great attention to details").
+3. **Minimalist hover effects**:
+   - Text links: `hover:opacity-60` or `hover:text-rusty-red`
+   - Cards: `hover:border-rusty-red`
+   - Buttons: `hover:bg-rusty-red hover:text-white hover:border-rusty-red`
+   - Avoid scale transforms except for subtle effects
 
-4. **Consistent spacing**: Always use `py-32` for section vertical padding and `px-6` for horizontal padding. Use `max-w-6xl mx-auto` for content containers.
+4. **Typography emphasis**: Use `<span>` tags with Rusty Red color for emphasis on key phrases (e.g., "great attention"). For spacing in hero text, use `style={{ wordSpacing: '0.25em' }}` if needed.
 
-5. **Border style**: All borders should be `border-black/10` for subtle definition. Cards should use `border border-black/10 p-8`.
+5. **Consistent spacing**: Always use `py-32` for section vertical padding and `px-6` for horizontal padding. Use `max-w-6xl mx-auto` for content containers.
 
-6. **Framer Motion**: Used for page animations with `initial={{ opacity: 0 }}`, `animate={{ opacity: 1 }}`, duration 0.6s (slower, more refined).
+6. **Border style**: All borders should be `border-black/10` for subtle definition. Cards should use `border border-black/10 p-8`.
+
+7. **Framer Motion**: Used for page animations with `initial={{ opacity: 0 }}`, `animate={{ opacity: 1 }}`, duration 0.6s (slower, more refined). Mobile menu uses spring animations for smooth slide-in effects.
+
+### Navigation
+
+#### Desktop Navigation
+- Fixed header at top of viewport with blur backdrop
+- Horizontal menu: Services, Projects, Contact (CTA button)
+- Active page underlined with `underline-offset-4`
+- Logo/name on left links to homepage
+
+#### Mobile Navigation (< 768px)
+- **Burger menu icon** that animates to X when opened
+- **Fullscreen overlay** that slides in from right
+- Frosted glass effect: `bg-white/95 backdrop-blur-lg`
+- Four evenly-spaced menu items: Home, Services, Projects, Contact
+- Active page highlighted in Rusty Red
+- Spring animations via Framer Motion (`damping: 30, stiffness: 300`)
+- z-index: burger button 9999, menu overlay 9998
+- Auto-closes on navigation or clicking outside menu content
+
+**Implementation**: `components/Header.tsx` uses React state + AnimatePresence for menu toggle
 
 ### Email Integration
 
 - **Resend API** for contact form email delivery
 - API endpoint: `app/api/contact/route.ts`
 - Environment variable: `RESEND_API_KEY` (stored in `.env.local`)
+- **Important**: Resend client must be initialized inside POST handler, not at module level (prevents build errors)
 - **Testing mode**: Sends to `francois.beyers@gmail.com` (Resend verified account email)
   - To send to other recipients, verify a domain in Resend dashboard
   - Update `to:` field in `app/api/contact/route.ts` after domain verification
@@ -129,21 +167,36 @@ Accents: Green/Red for success/error states
 
 ## Common Gotchas
 
-1. **app/layout.tsx keeps getting modified** - A linter or formatter may try to add SEO imports (@/lib/metadata, @/lib/schema, @/components/SchemaMarkup, @/components/Header). These files don't exist! The correct layout.tsx should be a "use client" component with inline navigation (no imports). If you see module not found errors, restore from commit `cea121f`.
+1. **Resend API initialization** - MUST initialize Resend client inside POST handler, NOT at module level:
+   ```typescript
+   // ❌ WRONG - causes build errors
+   const resend = new Resend(process.env.RESEND_API_KEY);
+   export async function POST() { ... }
+
+   // ✅ CORRECT - initialize inside handler
+   export async function POST() {
+     const resend = new Resend(process.env.RESEND_API_KEY);
+     // ... rest of code
+   }
+   ```
 
 2. **Resend testing mode limitation** - Resend API can only send to verified account email (francois.beyers@gmail.com) until domain is verified. Sending to any other email will fail with 403 error.
 
-3. **Don't use `generateStaticParams` with `"use client"`** - causes Next.js errors
+3. **Mobile menu z-indexing** - Mobile menu overlay must be outside `<nav>` tag to prevent positioning conflicts. Burger button needs z-9999, overlay needs z-9998.
 
-4. **Tailwind `@apply` only works with existing classes** - custom utilities must be defined in config
+4. **Build cache issues** - If seeing stale build errors after fixes, run `rm -rf .next && npm run build` to clear cache.
 
-5. **Service slugs must match** between `data/services.ts` and URL routing
+5. **Don't use `generateStaticParams` with `"use client"`** - causes Next.js errors
 
-6. **Mobile viewport**: Test layouts at 375px to ensure proper responsive behavior
+6. **Tailwind `@apply` only works with existing classes** - custom utilities must be defined in config. Custom color `rusty-red` is defined in `tailwind.config.js`.
 
-7. **Environment variables**: Server-side only - accessed via `process.env` in API routes/Server Components
+7. **Service slugs must match** between `data/services.ts` and URL routing
 
-8. **Dev server cache**: If seeing stale errors, kill all dev servers and restart fresh: `npm run dev`
+8. **Mobile viewport**: Test layouts at 375px to ensure proper responsive behavior. Mobile menu is fullscreen with evenly-spaced items.
+
+9. **Environment variables**: Server-side only - accessed via `process.env` in API routes/Server Components
+
+10. **Hero text spacing**: If words appear bunched together, add `style={{ wordSpacing: '0.25em' }}` to heading element.
 
 ## SEO Implementation
 
@@ -159,3 +212,38 @@ Priority Phase 1 items (4-6 hours):
 - Implement dynamic meta tags per page
 - Add FAQ sections to service pages
 - Create robots.txt and improve sitemap
+
+## Recent Updates (November 2025)
+
+### Visual Enhancements
+- **Rusty Red accent color** (rgb(213, 41, 65)) added throughout site via `tailwind.config.js`
+- **Project cards**: Implemented scrolling text hover effect with Framer Motion
+  - Infinitely looping project name across card on hover
+  - Animated first letter scales and changes to Rusty Red
+  - Gradient overlay and border color transitions
+- **Service cards**: Added hover effects with color transitions, decorative corner triangles
+- **Hero text spacing**: Fixed word spacing with `style={{ wordSpacing: '0.25em' }}`
+- All interactive elements now use Rusty Red for hover states and active navigation
+
+### Mobile Navigation
+- Implemented fullscreen burger menu for mobile devices (< 768px)
+- Animated burger icon transforms to X when open
+- Menu slides in from right with spring physics
+- Frosted glass background (`bg-white/95 backdrop-blur-lg`)
+- Four evenly-spaced menu items: Home, Services, Projects, Contact
+- Active page highlighted in Rusty Red
+- Auto-closes on navigation or outside clicks
+
+### Bug Fixes
+- Fixed Resend API build error by moving client initialization inside POST handler
+- Fixed TypeScript type mismatch in ProjectGrid hover state (number vs string)
+- Resolved z-index conflicts in mobile menu by moving outside nav element
+
+### Files Modified
+- `tailwind.config.js` - Added Rusty Red color definition
+- `app/projects/ProjectGrid.tsx` - Scrolling text animation and hover effects
+- `components/ServicesGrid.tsx` - Enhanced hover effects with color transitions
+- `components/Header.tsx` - Complete mobile navigation implementation
+- `app/page.tsx` - Updated hero section with Rusty Red accents and spacing
+- `app/services/page.tsx` - Added Rusty Red accents to hero
+- `app/api/contact/route.ts` - Fixed Resend initialization for builds

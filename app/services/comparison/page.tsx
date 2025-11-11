@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   openGraph: {
     title: 'Service Comparison',
     description: 'A detailed comparison of all available services.',
-    url: 'https://beyers.tech/services/comparison',
+    url: 'https://francoisbeyers.com/services/comparison',
   },
 });
 

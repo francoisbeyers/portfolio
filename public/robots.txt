@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://beyers.tech
+Host: https://francoisbeyers.com
 
 # Sitemaps
-Sitemap: https://beyers.tech/sitemap.xml
+Sitemap: https://francoisbeyers.com/sitemap.xml

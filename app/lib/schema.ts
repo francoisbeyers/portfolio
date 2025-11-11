@@ -2,8 +2,8 @@ export const generateOrganizationSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'Organization',
   'name': 'Francois Beyers',
-  'url': 'https://beyers.tech',
-  'logo': 'https://beyers.tech/logo.png',
+  'url': 'https://francoisbeyers.com',
+  'logo': 'https://francoisbeyers.com/logo.png',
   'description': 'Full-Stack Developer, SEO Expert, and AI Automation Specialist',
   'sameAs': [
     'https://www.linkedin.com/in/francois-beyers/',
@@ -34,7 +34,7 @@ export const generateServiceSchema = (service: {
   'provider': {
     '@type': 'Organization',
     'name': 'Francois Beyers',
-    'url': 'https://beyers.tech'
+    'url': 'https://francoisbeyers.com'
   },
   'areaServed': 'GB',
   'offers': service.pricing ? {
@@ -97,7 +97,7 @@ export const generatePersonSchema = () => ({
   '@type': 'Person',
   'name': 'Francois Beyers',
   'jobTitle': 'Full-Stack Developer, SEO Expert',
-  'url': 'https://beyers.tech',
+  'url': 'https://francoisbeyers.com',
   'email': 'francois@beyers.tech',
   'sameAs': [
     'https://www.linkedin.com/in/francois-beyers/',
@@ -128,7 +128,7 @@ export const generateCreativeWorkSchema = (project: {
   'creator': {
     '@type': 'Person',
     'name': 'Francois Beyers',
-    'url': 'https://beyers.tech'
+    'url': 'https://francoisbeyers.com'
   },
   'datePublished': `${project.year}-01-01`,
   'url': project.url
@@ -163,20 +163,20 @@ export const generateBlogPostingSchema = (post: {
   '@type': 'BlogPosting',
   headline: post.title,
   description: post.description,
-  image: post.image ? `https://beyers.tech${post.image}` : undefined,
+  image: post.image ? `https://francoisbeyers.com${post.image}` : undefined,
   datePublished: post.publishedAt,
   dateModified: post.updatedAt || post.publishedAt,
   author: {
     '@type': 'Person',
     name: post.author,
-    url: 'https://beyers.tech',
+    url: 'https://francoisbeyers.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Francois Beyers',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://beyers.tech/logo.png',
+      url: 'https://francoisbeyers.com/logo.png',
     },
   },
 });

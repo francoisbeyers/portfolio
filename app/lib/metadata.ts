@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const createMetadata = (overrides: Partial<Metadata> = {}): Metadata => {
-  const baseUrl = 'https://beyers.tech';
+  const baseUrl = 'https://francoisbeyers.com';
 
   return {
     title: {
@@ -72,7 +72,7 @@ export const pageMetadata = {
       type: 'website',
       title: 'Services - Web Development, SEO, AI Automation',
       description: 'Digital services designed to elevate your business online.',
-      url: 'https://beyers.tech/services',
+      url: 'https://francoisbeyers.com/services',
     },
   }),
 
@@ -84,7 +84,7 @@ export const pageMetadata = {
       type: 'website',
       title: 'Portfolio - Real-World Projects',
       description: 'Explore our portfolio of successful projects and digital solutions.',
-      url: 'https://beyers.tech/projects',
+      url: 'https://francoisbeyers.com/projects',
     },
   }),
 
@@ -96,7 +96,7 @@ export const pageMetadata = {
       type: 'website',
       title: 'Contact - Start Your Project',
       description: 'Let\'s discuss how I can help with your digital needs.',
-      url: 'https://beyers.tech/contact',
+      url: 'https://francoisbeyers.com/contact',
     },
   }),
 

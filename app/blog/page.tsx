@@ -9,7 +9,7 @@ export const metadata = createMetadata({
   openGraph: {
     title: 'Blog - Francois Beyers',
     description: 'Articles and insights on modern web technologies.',
-    url: 'https://beyers.tech/blog',
+    url: 'https://francoisbeyers.com/blog',
   },
 });
 

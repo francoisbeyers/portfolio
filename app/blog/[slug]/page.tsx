@@ -14,8 +14,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = getBlogPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
   if (!post) {
     return notFound();
   }
@@ -25,12 +26,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://beyers.tech/blog/${params.slug}`,
+      url: `https://francoisbeyers.com/blog/${slug}`,
       type: 'article',
       publishedTime: post.publishedAt,
       authors: [post.author],
       images: post.coverImage ? [{
-        url: `https://beyers.tech${post.coverImage}`,
+        url: `https://francoisbeyers.com${post.coverImage}`,
         width: 1200,
         height: 630,
         alt: `${post.title} cover image`,
@@ -39,8 +40,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   });
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

@@ -24,7 +24,7 @@ export default function Header() {
             <Link
               href="/services"
               className={`text-sm hover:opacity-60 transition-opacity ${
-                pathname === '/services' ? 'underline underline-offset-4' : ''
+                pathname === '/services' || pathname?.startsWith('/services/') ? 'underline underline-offset-4' : ''
               }`}
             >
               Services
@@ -32,10 +32,18 @@ export default function Header() {
             <Link
               href="/projects"
               className={`text-sm hover:opacity-60 transition-opacity ${
-                pathname === '/projects' ? 'underline underline-offset-4' : ''
+                pathname === '/projects' || pathname?.startsWith('/projects/') ? 'underline underline-offset-4' : ''
               }`}
             >
               Projects
+            </Link>
+            <Link
+              href="/blog"
+              className={`text-sm hover:opacity-60 transition-opacity ${
+                pathname === '/blog' || pathname?.startsWith('/blog/') ? 'underline underline-offset-4' : ''
+              }`}
+            >
+              Blog
             </Link>
             <Link
               href="/contact"
@@ -103,7 +111,7 @@ export default function Header() {
                 href="/services"
                 onClick={closeMenu}
                 className={`text-3xl font-medium hover:text-rusty-red transition-colors ${
-                  pathname === '/services' ? 'text-rusty-red' : 'text-black'
+                  pathname === '/services' || pathname?.startsWith('/services/') ? 'text-rusty-red' : 'text-black'
                 }`}
               >
                 Services
@@ -112,10 +120,19 @@ export default function Header() {
                 href="/projects"
                 onClick={closeMenu}
                 className={`text-3xl font-medium hover:text-rusty-red transition-colors ${
-                  pathname === '/projects' ? 'text-rusty-red' : 'text-black'
+                  pathname === '/projects' || pathname?.startsWith('/projects/') ? 'text-rusty-red' : 'text-black'
                 }`}
               >
                 Projects
+              </Link>
+              <Link
+                href="/blog"
+                onClick={closeMenu}
+                className={`text-3xl font-medium hover:text-rusty-red transition-colors ${
+                  pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-rusty-red' : 'text-black'
+                }`}
+              >
+                Blog
               </Link>
               <Link
                 href="/contact"

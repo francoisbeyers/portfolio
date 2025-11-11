@@ -1,5 +1,5 @@
-
 import { getProjectBySlug } from '@/data/projects';
+import { getServiceById } from '@/data/services';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { createMetadata } from '@/app/lib/metadata';
@@ -8,10 +8,9 @@ import { generateCreativeWorkSchema } from '@/app/lib/schema';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { use } from 'react';
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params;
   const project = getProjectBySlug(slug);
   if (!project) {
     return notFound();
@@ -22,9 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: `${project.title} - Project Case Study`,
       description: project.description || `A case study about the ${project.title} project.`,
-      url: `https://beyers.tech/projects/${slug}`,
+      url: `https://francoisbeyers.com/projects/${slug}`,
       images: project.image ? [{
-        url: `https://beyers.tech${project.image}`,
+        url: `https://francoisbeyers.com${project.image}`,
         width: 1200,
         height: 630,
         alt: `${project.title} mockup`,
@@ -33,8 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const project = getProjectBySlug(slug);
 
   if (!project) {
@@ -47,9 +46,11 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
   ];
 
   return (
-    <div className="min-h-screen bg-off-white">
-      {/* Schema Markup */}
+    <>
+      {/* Schema Markup - rendered on server */}
       <SchemaMarkup schema={generateCreativeWorkSchema(project)} />
+
+      <div className="min-h-screen bg-off-white">
 
       <div className="container mx-auto max-w-4xl px-4 py-16">
         <Breadcrumbs items={breadcrumbItems} />
@@ -92,9 +93,9 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
           <h3 className="text-xl font-bold mt-8 mb-4">Services Provided</h3>
           <ul>
             {project.services?.map(serviceId => {
-                // This is a simple way to link back. A better way would be to have a getServiceById function.
-                const serviceName = serviceId.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
-                return <li key={serviceId}><Link href={`/services/${serviceId}`}>{serviceName}</Link></li>
+                const service = getServiceById(serviceId);
+                if (!service) return null;
+                return <li key={serviceId}><Link href={`/services/${service.slug}`}>{service.title}</Link></li>
             })}
           </ul>
         </div>
@@ -105,6 +106,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             </Link>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

@@ -2,14 +2,6 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { SchemaMarkup } from '@/components/SchemaMarkup';
-import {
-  generateServiceSchema,
-  generateBreadcrumbSchema,
-  generateHowToSchema,
-  generateFAQSchema,
-  generateAggregateRatingSchema,
-} from '@/app/lib/schema';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { Service, Project } from '@/types';
 import { services } from '@/data/services';
@@ -20,12 +12,6 @@ interface ServiceDetailProps {
 }
 
 export default function ServiceDetail({ service, relatedProjects }: ServiceDetailProps) {
-  const breadcrumbsForSchema = [
-    { name: 'Home', url: 'https://beyers.tech' },
-    { name: 'Services', url: 'https://beyers.tech/services' },
-    { name: service.title, url: `https://beyers.tech/services/${service.slug}` },
-  ];
-
   const breadcrumbItems = [
     { name: 'Services', href: '/services' },
     { name: service.title },
@@ -49,16 +35,9 @@ export default function ServiceDetail({ service, relatedProjects }: ServiceDetai
 
   const serviceIndex = services.findIndex(s => s.id === service.id);
   const gradientClass = serviceColors[serviceIndex % serviceColors.length];
-  const aggregateRatingSchema = service.reviews ? generateAggregateRatingSchema(service.reviews) : null;
 
   return (
     <div className="min-h-screen bg-off-white">
-      {/* Schema Markup */}
-      <SchemaMarkup schema={generateServiceSchema(service)} />
-      <SchemaMarkup schema={generateBreadcrumbSchema(breadcrumbsForSchema)} />
-      <SchemaMarkup schema={generateHowToSchema(`How to Get Started with ${service.title}`, howToSteps)} />
-      {service.faqs && <SchemaMarkup schema={generateFAQSchema(service.faqs)} />}
-      {aggregateRatingSchema && <SchemaMarkup schema={aggregateRatingSchema} />}
 
       {/* Hero Section */}
       <section className={`py-20 px-4 bg-gradient-to-br ${gradientClass}`}>
